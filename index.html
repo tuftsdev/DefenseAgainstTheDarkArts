@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="stylesheets/style.css" />
+<title>COMP 116: Introduction to Computer Security</title>
+</head>
+
+<body>
+<h1>COMP 116: Introduction to Computer Security</h1>
+<h2>Tufts University Department of Computer Science, Spring 2018</h2>
+
+<p class="note">NOTE: For the summer online course syllabus, go <a href="index-summer.html">here</a></p>
+
+<h2>Instructor</h2>
+<ul>
+<li>Ming Chow, <a href="mailto:mchow@cs.tufts.edu">mchow@cs.tufts.edu</a></li>
+<li>Office Hours: Wednesdays from 1 - 4 PM, or by appointment, "in my usual spot" (the collaboration area next to the CS Main Office in Halligan).  Hours are good until the last day of classes, April 26th.</li>
+<li>Please send all class questions (e.g., help labs) <a href="https://piazza.com/tufts/spring2018/comp116/home" target="_blank">via Piazza</a>. DO NOT E-MAIL ME! Sign up at <a href="https://piazza.com/tufts/spring2018/comp116" target="_blank">https://piazza.com/tufts/spring2018/comp116</a>.</li>
+<li>For emergencies or private matters, please e-mail or see me directly.</li>
+</ul>
+
+<h2>Teaching Assistants</h2>
+<p>The official list of TAs and office hours is on Piazza. Hours are good until the last day of classes, April 26th.</p>
+<ul>
+<li>Winnona DeSombre</li>
+<li>Robert Goodfellow</li>
+</ul>
+
+<h2>Class Time and Location</h2>
+<ul>
+<li>Tuesdays and Thursdays, 4:30 - 5:45 PM in TBD</li>
+</ul>
+
+<h2>Prerequisites</h2>
+<ul>
+<li>COMP 15.  Strongly recommended that you have taken COMP 40. <span class="note">Please disregard prerequisites listed in the University's bulletin as they are incorrect!</span></li>
+</ul>
+
+<h2>Textbook</h2>
+<ul>
+<li>No textbook.  Don't make me laugh.</li>
+<li><a href="slides/week1-networks.pdf">Module 1: Networking and Attacking Networks</a></li>
+<li><a href="slides/week2-cryptography.pdf">Module 2: Cryptography</a></li>
+<li><a href="slides/week3-websecurity.pdf">Module 3: Web Security</a></li>
+<li><a href="slides/week5-vulnerabilities.pdf">Module 4: Vulnerabilities, Static and Dynamic Analysis</a></li>
+<li><a href="slides/week6-malware.pdf">Module 5: Malware</a></li>
+<li><a href="readings/">List of required readings for this class</a></li>
+</ul>
+
+<h2>Hardward and Software Requirements (on your personal computer)</h2>
+<ul>
+<li>A computer with at least 40 GB of hard disk space free and 4 GB of RAM</li>
+<li>A modern web browser (e.g., Firefox, Google Chrome, Chromium, Safari, Microsoft Edge)</li>
+<li>One of the following to run the Kali Linux live-CD ISO:
+<ul>
+  <li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox (free)</a></li>
+  <li><a href="http://vmap-tufts.onthehub.com/" target="_blank">VMware Fusion for Mac OS X or VMware Workstation for Windows or Linux (free one year license via Tufts CS)</a></li>
+</ul>
+</li>
+<li>A copy of the Kali Linux Virtual Machine I created for this class: <a href="http://www.cs.tufts.edu/comp/116/KaliVM.zip" target="_blank">http://www.cs.tufts.edu/comp/116/KaliVM.zip</a></li>
+</ul>
+
+<h2>Assessment</h2>
+<ul>
+<li>Labs (50%)</li>
+<li>Final project (15%)</li>
+<li>2 quizzes (25%)</li>
+<li>Subjective factors including readings, attendance, class participation, and posting to Piazza (10%)</li>
+</ul>
+
+<p>Class participation encompasses a variety of activities, all with the same purpose.  To earn high grades for class participation, you must show that you are actively engaged in managing your own learning, developing new skills, and developing new ways of programming and problem-solving. You can be engaged in a variety of ways:</p>
+<ul>
+<li>Asking appropriate questions in class</li>
+<li>Asking appropriate questions on Piazza</li>
+<li>Answering questions well on Piazza</li>
+<li>Going to cyber security events in the area</li>
+<li>Writing sane and sensible answers on quizzes</li>
+<li>Answering questions when called on in class</li>
+<li>Organizing study groups</li>
+<li>Interacting professionally with programming partners and course staff</li>
+<li>Working out ideas with teaching assistants</li>
+</ul>
+
+<p>Nobody has to do all of these things; you can earn top grades for class participation by doing just a few things well. In particular, nobody is required to speak in class, but everybody should be prepared to answer questions if called upon.</p>
+
+<p>Professional interactions with other students and with course staff are the same as those which are expected in any workplace. It is also professional for you to recognize that a member of the course staff may be present but not actually available to talk about COMP 116.</p>
+
+<h2 id="syllabus">Syllabus</h2>
+
+<p class="note">Schedule is subject to change. Given the nature of this subject, <a href="https://twitter.com/mattblaze/status/725097990944358400" target="_blank">changes to schedule will happen</a>.</p>
+
+<table>
+<tr>
+<th>Date</th>
+<th>Agenda</th>
+<th>Deliverables</th>
+</tr>
+<tr>
+<td>Thursday, January 18th</td>
+<td>
+	<ul>
+		<li><a href="slides/week1-networks.pdf">Course Introduction</a></li>
+		<li>Watch: <a href="https://www.youtube.com/watch?v=nT-TGvYOBpI" target="_blank">Dr. Dan Geer's Black Hat 2014 Keynote</a>. The text of his talk: <a href="http://geer.tinho.net/geer.blackhat.6viii14.txt" target="_blank">http://geer.tinho.net/geer.blackhat.6viii14.txt</a></li>
+		<li>Watch: <a href="https://www.youtube.com/watch?v=iLiQqii0c9E" target="_blank">How to Prevent Security Afterthought Syndrome by Sarah Zatko (HOPE X, July 2014)</a></li>
+		<li>Watch: <a href="http://livestream.com/accounts/9198012/events/5834263/videos/131672227" target="_blank">(continuing Sarah's work) The Cyber Security Education Gap - What Do We Do Now? (The Eleventh HOPE, July 2016)</a></li>
+		<li>Watch: <a href="https://www.youtube.com/watch?v=nFzu6CNtqec" target="_blank">Tacoma Narrows Bridge Collapse</a></li>
+		<li>READ FIRST: <a href="https://www.washingtonpost.com/sf/business/2015/06/22/net-of-insecurity-part-3/" target="_blank">A Disaster Foretold --and Ignored (Washington Post)</a></li>
+		<li>READ SECOND: <a href="readings/p761-thompson.pdf" target="_blank">Reflections on Trusting Trust</a> by Ken Thompson</li>
+		<li>READ THIRD: <a href="http://www.theatlantic.com/technology/archive/2015/11/programmers-should-not-call-themselves-engineers/414271/" target="_blank">Programmers: Stop Calling Yourselves Engineers (The Atlantic)</a></li>
+		<li>Read: <a href="https://mobile.nytimes.com/2016/09/29/technology/yahoo-data-breach-hacking.html" target="_blank">Defending Against Hackers Took a Back Seat at Yahoo, Insiders Say (NYT)</a></li>
+		<li>Read: <a href="readings/rp_DBIR_2017_Report_en_xg.pdf" target="_blank">Verizon 2017 Data Breach Investigations Report (DBIR)</a></li>
+	</ul>
+</td>
+<td>
+	<ul>
+		<li><a href="#" target="_blank">Lab 1 Assigned: Course Roster</a>. <span class="note">PLEASE COMPLETE ASAP! This lab is worth 1 point.</span></li>
+		<li><a href="https://piazza.com/tufts/spring2018/comp116" target="_blank">Please sign up for our Piazza group</a></li>
+		<!--<li><a href="#">Lab 2, Due Thursday, September 14th: Working with a Hypervisor and a Virtual Machine</a></li>-->
+	</ul>
+</td>
+</tr>
+<tr>
+<td>Tuesday, January 23rd</td>
+<td>
+	<ul>
+		<li><a href="slides/week1-networks.pdf">Networking</a></li>
+		<li>Video (YouTube): <a href="https://www.youtube.com/watch?v=74a8MTkh7Tk" target="_blank">Basic Wireshark overview, PCAPs, reconstruction, extraction, filters</a></li>
+		<li>Video (YouTube): <a href="https://www.youtube.com/watch?v=HEEnLZV2wGI" target="_blank">The OSI Model Demystified</a></li>
+		<li>Read: <a href="https://adainitiative.org/2012/08/defcon-why-conference-harassment-matters/" target="_blank">DEF CON: Why Conference Harassment Matters</a></li>
+		<li>Read: <a href="https://www.schneier.com/blog/archives/2012/08/sexual_harassme.html" target="_blank">Sexual Harassment at DefCon (and Other Hacker Cons) by Bruce Schneier</a></li>
+		<li>Read: <a href="https://www.defcon.org/html/links/dc-code-of-conduct.html" target="_blank">DEF CON Conference Code of Conduct</a></li>
+		<li>Read: <a href="https://freedom-to-tinker.com/2006/02/15/software-security-trinity-trouble/" target="_blank">The Trinity of Trouble: Why the Problem is Growing (Freedom to Tinker)</a></li>
+		<li>Read: <a href="http://cdn.shopify.com/s/files/1/0177/9886/files/2013_WOS_ToolsAndTechniques.pdf?47" target="_blank">Tools and Techniques to Succeed at the Wall of Sheep (on wallofsheep.com)</a></li>
+		<li>Read: <a href="https://www.destroyallsoftware.com/compendium/network-protocols/97d3ba4c24d21147" target="_blank">Network Protocols (Destroy All Software)</a>
+		<ul>
+			<li><a href="https://news.ycombinator.com/item?id=14468471" target="_blank">Discussion on Hacker News: https://news.ycombinator.com/item?id=14468471</a></li>
+		</ul>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, January 25th</td>
+<td>
+	<ul>
+		<li><a href="slides/week1-networks.pdf">Attacking Networks: Sniffing</a></li>
+		<li>Video (YouTube): <a href="https://www.youtube.com/watch?v=xTOyZ6TWQdM" target="_blank">Address Resolution Protocol (ARP) Explained</a></li>		
+		<li>Video (Asciinema): <a href="https://asciinema.org/a/124186" target="_blank">Identifying usernames and passwords in PCAPs using Ettercap</a></li>
+		<li>Read: <a href="http://www.irongeek.com/i.php?page=security/arpspoof" target="_blank">The Basics of Arpspoofing/Arppoisoning (Irongeek.com)</a></li>
+		<li>Read: <a href="https://www.veracode.com/security/arp-spoofing" target="_blank">ARP Spoofing (Veracode)</a></li>
+		<li>Read: <a href="readings/2600vol25no2.pdf" target="_blank">Fun With Network Friends (2600 Magazine, Summer 2008)</a></li>
+		<li>Read: <a href="https://danielmiessler.com/study/bettercap/#gs.vu5kJb4" target="_blank">A Bettercap Tutorial (Daniel Miessler)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, January 30th</td>
+<td>
+	<ul>
+		<li><a href="slides/week1-networks.pdf">Attacking Networks: Scanning, Part I</a></li>
+		<li>Read: <a href="http://blog.erratasec.com/2013/09/we-scanned-internet-for-port-22.html" target="_blank">We scanned the Internet for port 22 (Errata Security)</a></li>
+		<li>Read: <a href="https://nakedsecurity.sophos.com/2014/08/15/thousands-of-computers-open-to-eavesdropping-and-hijacking/" target="_blank">Thousands of computers open to eavesdropping and hijacking (Sophos)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, February 1st</td>
+<td>
+	<ul>
+		<li><a href="slides/week1-networks.pdf">Attacking Networks: Scanning, Part II</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, February 6th</td>
+<td>
+	<ul>
+		<li><a href="slides/week1-networks.pdf">Attacking Networks: Distributed Denial of Service Attacks</a></li>
+		<li>Read: <a href="https://blog.cloudflare.com/deep-inside-a-dns-amplification-ddos-attack/" target="_blank">Deep Inside a DNS Amplification DDoS Attack (Cloudflare)</a></li>
+		<li>Read: <a href="http://www.securityweek.com/brian-krebs-blog-hit-665-gbps-ddos-attack" target="_blank">Brian Krebs' Blog Hit by 665 Gbps DDoS Attack (SecurityWeek)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, February 8th</td>
+<td>
+	<ul>
+		<li><a href="slides/week2-cryptography.pdf">Cryptography: The Basics</a></li>
+		<li>Read: <a href="https://paragonie.com/blog/2015/08/you-wouldnt-base64-a-password-cryptography-decoded" target="_blank">You Wouldn't Base64 a Password - Cryptography Decoded (Paragon Initiative)</a></li>
+	</ul>
+</td>
+<td>
+	<ul>
+		<li>Tufts Spring Career Fair on Friday, February 9th, 11:30 AM – 2:30 PM at Gantcher Center</li>
+	</ul>
+</td>
+</tr>
+<tr>
+<td>Tuesday, February 13th</td>
+<td>
+	<ul>
+		<li><a href="slides/week2-cryptography.pdf">Cryptography, Part II: Hash Functions and Password Cracking</a></li>
+		<li>Read: <a href="https://github.com/blog/2190-github-security-update-reused-password-attack" target="_blank">GitHub Security Update: Reused password attack (GitHub)</a></li>
+		<li>Read: <a href="http://minimaxir.com/2015/02/password-numbers/" target="_blank">Analyzing the Patterns of Numbers in 10M Passwords (2015)</a></li>
+		<li>Read: <a href="https://crackstation.net/hashing-security.htm" target="_blank">Salted Password Hashing - Doing it Right</a></li>
+		<li>Read: <a href="https://blog.codinghorror.com/hacker-hack-thyself/" target="_blank">Hacker, Hack Thyself:&nbsp;Always assume that Internet Bad Guys will somehow get a copy of your database. Then what? (Coding Horror)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, February 15th</td>
+<td>
+	<ul>
+		<li><a href="slides/week2-cryptography.pdf">Cryptography, Part III: Asymmetric Algorithms, Diffie Hellman Key Exchange</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, February 20th</td>
+<td>
+	<ul>
+		<li><a href="slides/week2-cryptography.pdf">Cryptography, Part IV: Transport Layer Security (TLS)</a></li>
+		<li>Read: <a href="https://blogs.akamai.com/2016/03/enterprise-security---ssltls-primer-part-1---data-encryption.html" target="_blank">Enterprise Security - SSL/TLS Primer Part 1 - Data Encryption (Akamai)</a></li>
+		<li>Read: <a href="https://blogs.akamai.com/2016/03/enterprise-security---ssltls-primer-part-2---public-key-certificates.html" target="_blank">Enterprise Security - SSL/TLS Primer Part 2 - Public Key Certificates (Akamai)</a></li>
+		<li>Read: <a href="http://sudhakar.online/programming/2015/08/09/https.html" target="_blank">Illustrated: How HTTPS Works (sudhakar.online)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, February 27th</td>
+<td>
+	<ul>
+		<li><a href="slides/week3-websecurity.pdf">Web Security: HTTP Review, OWASP, Web Proxy, Training Grounds, Cross-Site Scripting</a></li>
+		<li>Watch: <a href="http://www.veracode.com/security/xss" target="_blank">Cross-Site Scripting (XSS) Tutorial by Chris Eng (Veracode)</a></li>
+		<li>READ FIRST: <a href="http://mkcohen.com/how-the-web-works-in-one-easy-lesson" target="_blank">How The Web Works --In One Easy Lesson (mkcohen.com)</a></li>
+		<li>READ SECOND: <a href="https://www.veracode.com/sites/default/files/Resources/Reports/state-of-software-security-volume-7-veracode-report.pdf" target="_blank">Veracode's State of Software Security 2016</a></li>
+		<li>Read: <a href="http://mkcohen.com/how-the-web-works-in-one-easy-lesson" target="_blank">How The Web Works --In One Easy Lesson (mkcohen.com)</a></li>
+		<li>Read: <a href="https://github.com/alex/what-happens-when" target="_blank">What happens when you type Google.com into your browser and press enter? (on GitHub)</a></li>
+		<li>Read: <a href="https://www.owasp.org/index.php/Top_10_2017-Top_10" target="blank">OWASP Top 10</a></li>
+		<li><a href="https://www.sans.org/top25-software-errors/" target="blank">CWE/SANS TOP 25 Most Dangerous Software Errors</a></li>
+		<li>Read: <a href="https://www.veracode.com/blog/2012/02/adios-say-goodbye-to-nosy-iphone-apps" target="_blank">AdiOS: Say Goodbye to Nosy iPhone Apps (Veracode)</a></li>
+		<li>Read: <a href="https://medium.com/@maxgreenwald/mitmproxy-your-d-i-y-private-eye-864c08f84736" target="_blank">Mitmproxy: Your D.I.Y. Private Eye (Medium)</a></li>
+		<li>Read: <a href="http://www.shubhro.com/2014/12/18/reverse-engineering-kayak-mitmproxy/" target="_blank">Reverse-Engineering the Kayak App with mitmproxy (shubhro.com)</a></li>
+		<li>Read: <a href="https://community.rapid7.com/docs/DOC-1875" target="_blank">Metasploitable 2 Exploitability Guide (Rapid7)</a></li>
+		<li>Read: <a href="https://www.acunetix.com/websitesecurity/blind-sql-injection/" target="_blank">Blind SQL Injection: What is it? (Acuenix)</a></li>
+		<li>Read: <a href="https://xkcd.com/327/" target="_blank">XKCD: Exploits of a Mom</a></li>
+		<li>Read: <a href="http://motherboard.vice.com/read/the-history-of-sql-injection-the-hack-that-will-never-go-away" target="_blank">The History of SQL Injection, the Hack That Will Never Go Away (Vice)</a></li>
+		<li>Read: <a href="https://www.wired.com/2015/12/anonymous-leaks-paris-climate-summit-officials-private-data/" target="_blank">Anonymous Leaks Paris Climate Summit Officials' Private Data (Wired)</a></li>
+		<li>Read: <a href="https://www.veracode.com/blog/secure-development/why-even-google-susceptible-most-basic-website-vulnerabilities" target="_blank">Why Even Google Is Susceptible to the Most Basic Website Vulnerabilities (Veracode)</a></li>
+		<li>Read: <a href="https://henryhoggard.co.uk/blog/Paypal-2FA-Bypass" target="_blank">Paypal 2FA Bypass (henryhoggard.co.uk)</a></li>
+		<li>Read: <a href="https://www.veracode.com/sites/default/files/Resources/Infographics/10-scariest-vulnerabilities.pdf" target="_blank">10 Scariest Vulnerabilities (Veracode)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, March 1st</td>
+<td>
+	<ul>
+		<li><a href="slides/week3-websecurity.pdf">Web Security, Part II: SQL Injection, Cross-Site Request Forgery, Directory Traversal</a></li>
+		<li>Read: <a href="https://www.veracode.com/security/csrf" target="_blank">Cross-Site Request Forgery Guide: Learn All About CSRF Attacks and CSRF Protection (Veracode)</a></li>
+		<li>Read: <a href="http://blog.codinghorror.com/cross-site-request-forgeries-and-you/" target="_blank">Cross-Site Request Forgeries and You (Coding Horror)</a></li>
+		<li>Read: <a href="http://www.acunetix.com/websitesecurity/csrf-attacks/" target="_blank">CSRF Attacks - What They Are and How to Defend Against Them (Acunetix)</a></li>
+		<li>Read: <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)" target="_blank">Cross-Site Request Forgery (OWASP)</a></li>
+		<li>Read: <a href="http://www.cs.utexas.edu/~shmat/courses/cs378_spring09/zeller.pdf" target="_blank">Cross-Site Request Forgeries: Exploitation and Prevention (Zeller, Felten)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, March 6th</td>
+<td>
+	<ul>
+		<li><a href="slides/week3-websecurity.pdf">Web Security, Part III: Command Execution, Local and Remote File Inclusion</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, March 8th</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, March 13th</td>
+<td>
+	<ul>
+		<li><a href="slides/week5-vulnerabilities.pdf">Vulnerabilities</a></li>
+		<li>Read: <a href="https://www.slideshare.net/Cigital/a-brief-history-of-software-security-and-software-security-bits-bytes-bugs-and-the-bsimm" target="_blank">A Brief History of Software, Security, and Software Security: Bits, Bytes, Bugs, and the BSIMM (Gary McGraw's talk to my class in fall 2013)</a></li>
+		<li>Read: <a href="readings/schristeycoley-20151029.pdf" target="_blank">Introduction to CVE, CWE, and the Top 25 (Steve Christey Coley's guest talk to this class back in fall 2015)</a></li>
+		<li>Read: <a href="http://www.economist.com/news/science-and-technology/21720268-consequences-pile-up-things-are-starting-improve-computer-security" target="_blank">Why Everything is Hackable: Computer Security is Broken From Top to Bottom (The Economist)</a></li>
+		<li>Read: <a href="https://danielmiessler.com/blog/difference-cve-cwe/" target="_blank">The Difference Between CWE and CVE (Daniel Miessler)</a></li>
+		<li>Read: <a href="https://www.tenable.com/blog/web-applications-under-attack-tenable-io-and-the-2017-verizon-dbir" target="_blank">Web Applications Under Attack: Tenable.io and the 2017 Verizon DBIR (Tenable)</a></li>
+		<li>Read: <a href="https://www.veracode.com/blog/2016/08/language-appsec" target="_blank">The Language of AppSec (Veracode)</a></li>
+		<li>Read: <a href="https://freedom-to-tinker.com/2006/02/16/software-security-badness-ometer/" target="_blank">Application Security Tools: Good or Bad? (Freedom-To-Tinker)</a></li>
+		<li>Read: <a href="https://www.synopsys.com/blogs/software-security/badness-ometers-are-good-do-you-own-one/" target="_blank">Badness-meters Are Good. Do You Own One? (Synopsys)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, March 15th</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, March 27th</td>
+<td>
+	<ul>
+		<li><a href="slides/week5-vulnerabilities.pdf">Static and Dynamic Analysis</a></li>
+		<li>Read: <a href="readings/static-binary-analysis-wysopal-tufts-comp-116.pdf" target="_blank">Binary Static Analysis (Chris Wysopal's talk to this class back in spring 2012)</a></li>
+		<li>Read: <a href="readings/predicting_the_future_veracode.pdf" target="_blank">We See the Future and It's Not Pretty: Predicting the Future Using Vulnerability Data (Chris Wysopal's talk to this class back in fall 2013)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, March 29th</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, April 3rd</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, April 5th</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, April 10th</td>
+<td rowspan="2">
+	<ul>
+		<li><a href="slides/week6-malware.pdf">Malware</a></li>
+		<li>Tutorial: <a href="https://securedorg.github.io/RE101/" target="_blank">Malware Unicorn's Reverse Engineering Malware 101 (GitHub)</a></li>
+		<li>Read: <a href="http://spaf.cerias.purdue.edu/tech-reps/823.pdf" target="_blank">The Internet Worm Program: An Analysis (http://spaf.cerias.purdue.edu)</a></li>
+		<li>Read: <a href="https://www.alienvault.com/blogs/labs-research/reverse-engineering-malware" target="_blank">Reverse Engineering Malware (Alien Vault)</a></li>
+		<li>Read: <a href="https://nakedsecurity.sophos.com/2013/10/18/cryptolocker-ransomware-see-how-it-works-learn-about-prevention-cleanup-and-recovery/" target="_blank">CryptoLocker Ransomware (Sophos)</a></li>
+		<li>Read: <a href="https://www.fireeye.com/blog/threat-research/2017/05/smb-exploited-wannacry-use-of-eternalblue.html" target="_blank">SMB Exploited: WannaCry Use of &quot;EternalBlue&quot; (FireEye)</a></li>
+		<li>Read: <a href="http://blog.checkpoint.com/2016/05/09/viking-horde-a-new-type-of-android-malware-on-google-play/" target="_blank">Viking Horde: A New Type of Android Malware on Google Play (Check Point)</a></li>
+		<li>Read: <a href="https://www.alienvault.com/blogs/security-essentials/building-a-home-lab-to-become-a-malware-hunter-a-beginners-guide" target="_blank">Building a Home Lab to Become a Malware Hunter - A Beginner's Guide (Alien Vault)</a></li>
+		<li>Read: <a href="https://www.garymcgraw.com/wp-content/uploads/2016/02/malcode.pdf" target="_blank">Attacking Malicious Code: A Report to the Infosec Research Council (McGraw, Morrisett; IEEE 2000)</a></li>
+	</ul>	
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, April 12th</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, April 17th</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, April 19th</td>
+<td rowspan="2">
+	<ul>
+		<li>Incident Handling and Forensics</li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Tuesday, April 24th</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>Thursday, April 26th</td>
+<td>
+	<ul>
+		<li>Read: <a href="readings/4858-1066-strike.pdf">"Strike Back" by Jennifer Granick (;login: volume 29, number 6, 2004)</a></li>
+		<li>Read: <a href="readings/cyberinsecurity.pdf">"CyberInsecurity: The Cost of Monopoly" by Dan Geer (2004)</a></li>
+	</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+<h2 id="policy">Course Policies</h2>
+
+<h3>Student Accessibility Services (SAS)</h3>
+<p>If you have a disability that requires reasonable accommodations, please contact the Student Accessibility Services office at <a href="mailto:Accessibility@tufts.edu">Accessibility@tufts.edu</a> or 617-627-4539 to make an appointment with an SAS representative to determine appropriate accommodations.  Please be aware that accommodations cannot be enacted retroactively, making timeliness a critical aspect for their provision.  Please note that accommodation letters will no longer be on Trunk. Rather it is your responsibility to hand deliver them to me.  For more details, see <a href="https://students.tufts.edu/student-accessibility-services/faculty-members" target="_blank">https://students.tufts.edu/student-accessibility-services/faculty-members</a>.</p>
+
+<h3>Electronic Devices</h3>
+<p>Laptops or mobile devices are not allowed to be used in class unless specified.  Phones must be silent.  You are allowed to politely step outside of the class to take phone calls (e.g., for emergencies, job offers).</p>
+
+<h3>Late Policy</h3>
+<p>A lab that is submitted electronically will typically be due at 11:59 PM on Thursday. We will grant an automatic extension of 24 hours to you at no cost (i.e., grace period). A lab submitted after the grace period will not be accepted.</p>
+<p>An lab is expected to be submitted on time. However, we recognize that the exigencies of college life occasionally interfere with on-time submission. If you have difficulty getting the lab in on time, you have two options:</p>
+<ol>
+<li>For ordinary difficulties, each student is automatically issued three (3) "extension tokens." By expending an extension token, you can get an automatic 24-hour extension on all deadlines associated with a single lab.  To use an extension token, you must e-mail me at <code>mchow@cs.tufts.edu</code>. Thus must be sent before the lab is due and not during the grace period.  At most two extension tokens may be expended on any single lab.  When you are out of tokens, late labs will no longer be accepted: it will be returned ungraded, and you will receive no credit for the work.</li>
+<li>If a serious illness affects your ability to complete the lab on time, your first step is to report the illness using the "Illness Notification Form" that is available in WebCenter for Students. We will make suitable arrangements. For extraordinary difficulties, such as bereavement, family emergencies, or other extraordinary unpleasant events, your first step should be to make contact with your associate dean for undergraduate education. You must take this step before the lab is due. Ask your dean to drop me an email or give me a call, and we will make special arrangements that are suited to your circumstances.</li>
+</ol>
+<p>Please understand that extension tokens are meant to be used.  That is, you will not receive any special bonus at the end of the course if you do not use any of your extension tokens.</p>
+
+<h3>Solutions to Labs and Examinations</h3>
+<p>Some solutions to labs and examinations may be posted on Piazza.</p>
+
+</body>
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"/>
+<link rel="stylesheet" href="stylesheets/style.css" />
+<title>COMP 116: Introduction to Computer Security</title>
+</head>
+
+<body>
+<h1>COMP 116: Introduction to Computer Security (ONLINE)</h1>
+<h2>Tufts University Department of Computer Science, Summer 2018, Session B</h2>
+
+<h2>Instructor</h2>
+<ul>
+<li>Ming Chow, <a href="mailto:mchow@cs.tufts.edu">mchow@cs.tufts.edu</a></li>
+<li>Please send all class questions (e.g., help labs) <a href="https://piazza.com/tufts/summer2018/comp116/home" target="_blank">via Piazza</a>. DO NOT E-MAIL ME! Sign up at <a href="https://piazza.com/tufts/summer2018/comp116" target="_blank">https://piazza.com/tufts/summer2018/comp116</a>.</li>
+<li>For emergencies or private matters, please e-mail or see me directly.</li>
+</ul>
+
+<h2>Prerequisites</h2>
+<ul>
+<li>COMP 15.  Strongly recommended that you have taken COMP 40. <span class="note">Please disregard prerequisites listed in the University's bulletin as they are incorrect!</span></li>
+</ul>
+
+<h2>Textbook</h2>
+<ul>
+<li>None</li>
+</ul>
+
+<h2>Hardward and Software Requirements (on your personal computer)</h2>
+<ul>
+<li>A computer with at least 40 GB of hard disk space free and 4 GB of RAM</li>
+<li>A modern web browser (e.g., Firefox, Google Chrome, Chromium, Safari, Microsoft Edge)</li>
+<li>One of the following to run the Kali Linux live-CD ISO:
+<ul>
+  <li><a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox (free)</a></li>
+  <li><a href="http://vmap-tufts.onthehub.com/" target="_blank">VMware Fusion for Mac OS X or VMware Workstation for Windows or Linux (free one year license via Tufts CS)</a></li>
+</ul>
+</li>
+<li>A copy of the Kali Linux Live-CD ISO: <a href="https://www.kali.org/downloads/" target="_blank">Download at http://www.kali.org/downloads/</a></li>
+</ul>
+
+<h2>Assessment</h2>
+<ul>
+<li>Labs (75%)</li>
+<li>Quizzes (10%; there will be two --on week 2 and on week 6)</li>
+<li>Participation (including Weekly Readings and Debates) (15%)</li>
+</ul>
+
+<h2>Syllabus</h2>
+
+<h3>Week 1: Networking and Attacking Networks</h3>
+<p>By the end of this week, you will be able to dissect packet captures (PCAPs), perform network reconnaissance and port scanning, understand the methods of conducting a distributed denial of service attack (DDoS).</p>
+
+<h5>Slides: <a href="slides/week1-networks.pdf">week1-networks.pdf</a></h5>
+<h5><a href="readings/index.html#week1">Required Readings</a></h5>
+
+<h5>Topics:</h5>
+<ul>
+<li>What is Security?</li>
+<li>The Attribution Problem</li>
+<li>How two computers talk to each other</li>
+<li>The OSI Model</li>
+<li>Internet Protocol (IP)</li>
+<li>Transfer Control Protocol (TCP)</li>
+<li>A Packet and PCAPs</li>
+<li>Sniffing</li>
+<li>Promiscuous Mode</li>
+<li>Address Resolution Protocol (ARP)</li>
+<li>ARP Spoofing</li>
+<li>Scanning and Network Reconnaissance</li>
+<li>Ping Sweep</li>
+<li>Stealthy Scans</li>
+<li>Distributed Denial of Service (DDoS)</li>
+<li>DDoS: Teardrop</li>
+<li>DDoS: SYN flood</li>
+<li>DDoS: Amplification</li>
+</ul>
+
+<h5>Tools Used:</h5>
+<ul>
+<li>ettercap</li>
+<li>Bettercap</li>
+<li>Netcat</li>
+<li>Nmap</li>
+<li>SHODAN</li>
+<li>tcpdump</li>
+<li>Wireshark</li>
+<li>Python</li>
+</ul>
+
+<h3>Week 2: Cryptography</h3>
+<p>By the end of this week, you will be able to extract credentials sent insecurely via plaintext over the network, detect stealthy scans and other suspicious activities on your network, crack passwords on a Linux or Windows system, understand the difference between symmetric and asymmetric cryptography, understand and use one-way hash functions, understand how Transport Layer Security (TLS) works, intercept HTTPS traffic with a proxy, understand how and how not to store users' passwords.</p>
+
+<h5>Slides: <a href="slides/week2-cryptography.pdf">week2-crytography.pdf</a></h5>
+<h5><a href="readings/index.html#week2">Required Readings</a></h5>
+
+<h5>Topics:</h5>
+<ul>
+<li>The Golden Rule</li>
+<li>One Time Pad (OTP)</li>
+<li>Symmetric Algorithms</li>
+<li>One Way Hash Functions</li>
+<li>Applications of One Way Hash Functions</li>
+<li>Asymmetric Algorithms</li>
+<li>Applications of One Asymmetric Algorithms</li>
+<li>Transport Layer Security (TLS) and How HTTPS Works</li>
+<li>Encoding</li>
+<li>Base64</li>
+</ul>
+
+<h5>Tools Used:</h5>
+<ul>
+<li>John the Ripper</li>
+<li>mitmproxy</li>
+<li>openssl</li>
+<li>Python and Scapy</li>
+<li>ssh</li>
+<li>THC Hydra</li>
+</ul>
+
+<h3>Week 3: Web Security</h3>
+<p>By the end of this week, you will be able to perform and defend against the following attacks: Cross-Site Scripting (XSS), SQL injection, Cross-Site Request Forgery (CSRF), session hijacking, cookie tampering, directory traversal, command injection, remote and local file inclusion.</p>
+
+<h5>Slides: <a href="slides/week3-websecurity.pdf">week3-websecurity.pdf</a></h5>
+<h5><a href="readings/index.html#week3">Required Readings</a></h5>
+
+<h5>Topics</h5>
+<ul>
+<li>Vulnerabilities</li>
+<li>Scanning for Vulnerabilities</li>
+<li>OWASP Top 10</li>
+<li>Common Vulnerabilities and Exposures (CVE)</li>
+<li>Common Weakness Enumeration (CWE)</li>
+<li>Cross Site Scripting (XSS)</li>
+<li>SQL Injection</li>
+<li>Cross Site Request Forgery (XSRF / CSRF)</li>
+<li>Command Execution</li>
+<li>Directory Traversal</li>
+<li>Cookie Tampering</li>
+<li>Remote and Local File Inclusion</li>
+</ul>
+
+<h5>Tools Used:</h5>
+<ul>
+<li>Burp Suite</li>
+<li>sqlmap</li>
+<li>zaproxy (OWASP ZAP)</li>
+</ul>
+
+<h3>Week 4: The Capture The Flag Game</h3>
+<p>By the end of this week, you will be able to take advantage of a number of vulnerabilities on a live web server.</p>
+
+<h3>Week 5: Vulnerabilities, Static and Dynamic Analysis</h3>
+<p>By the end of this week, you will be exposed to and understand the difference between CVE and CWE, be able to scan for vulnerabilities, use static analysis software to identify vulnerabilities, understand the difference between static and dynamic analysis, and be able to write a technical risk analysis.</p>
+
+<h5>Slides: <a href="slides/week5-vulnerabilities.pdf">week5-vulnerabilities.pdf</a></h5>
+<h5><a href="readings/index.html#week5">Required Readings</a></h5>
+<h5>Topics:</h5>
+<ul>
+<li>Vulnerabilities</li>
+<li>Common Vulnerabilities and Exposures (CVE)</li>
+<li>Common Weakness Enumeration (CWE)</li>
+<li>National Vulnerability Database</li>
+<li>Vulnerability Scanning</li>
+<li>The badness-ometer</li>
+<li>Static Analysis</li>
+<li>Dynamic Analysis</li>
+<li>Strengths and Weaknesses of Static and Dynamic Analysis</li>
+<li>Technical Risk Analysis</li>
+</ul>
+
+<h5>Tools Used:</h5>
+<ul>
+<li>Exploit Database</li>
+<li>Nikto</li>
+<li>Metasploit</li>
+<li>grep</li>
+<li>lint</li>
+</ul>
+
+<h3>Week 6: Malware</h3>
+<p>By the end of this week, you will be able to describe types of malware, see certain malware behaviors, scan and analyze malware, reverse engineer Android apps to determine if they are malicious.</p>
+
+<h5>Slides: <a href="slides/week6-malware.pdf">week6-malware.pdf</a></h5>
+<h5><a href="readings/index.html#week6">Required Readings</a></h5>
+<h5>Topics:</h5>
+<ul>
+<li>Virus</li>
+<li>Worm</li>
+<li>Trojan Horse</li>
+<li>Backdoor</li>
+<li>Using VirusTotal</li>
+<li>Android Malware</li>
+</ul>
+
+<h5>Tools Used:</h5>
+<ul>
+<li>apktool</li>
+<li>VirusTotal</li>
+</ul>
+
+<h3>Topics That Will Not Be Covered</h3>
+<ul>
+<li>Forensics</li>
+<li>Anti-Forensics</li>
+<li>Social Engineering</li>
+<li>x86, x64, ARM Reverse Engineering</li>
+<li>Privacy</li>
+</ul>
+
+<h2 id="expectations">Expectations and Structure of This Online Course</h2>
+<p>This will be an adventure for all of us but it will be a fun one for sure.  A few notes on the expectations and structure of this course:</p>
+
+<h3>1. What this course will NOT have and what I will NOT do:</h3>
+<ul>
+<li>Have set office hours.</li>
+<li>Require students to meet online during specific times.</li>
+<li>Require students to work in teams, a semester group project.</li>
+<li>Require students to physical meet at the Tufts Medford Campus.</li>
+</ul>
+<p>There are many good reasons why I will not do any of the above items:</p>
+<ul>
+<li>It's summertime.  Many of you have commitments and plans already scheduled (e.g., vacation, dinners, weddings, conferences, family get-togethers).</li>
+<li>A number of you are working (full-time or internship).  That's more important as people need to live, eat.</li>
+<li>Some students are taking this course abroad.  Thus, there are time zone differences.</li>
+</ul>
+<p>Adding constraints and extra burden to your lives especially during the summer will not fit well with anyone.  Extra constraints and burden also defeat the purpose of an online course.  Thus, you will probably not see me at all this summer.</p>
+
+<h3>2. You are on your own pace.</h3>
+<p>You can choose to:</p>
+<ol>
+<li>Pace yourself during the week</li>
+<li>Do everything during the weekend</li>
+<li>Do everything during the last minute</li>
+<li>Don't do any of the work</li>
+</ol>
+<p>Your choice, but the latter three choices are not wise.</p>
+
+<h3>3. You are responsible for your own learning.</h3>
+<p>A very important point: if you want everything gone over in lecture or in notes, then this is not the course for you. More importantly, that's not how things work in real life.</p>
+
+<h3>4. You will learn by doing.</h3>
+<p>Each week, there will be at most three labs (and a quiz every other week) to hone your skills and to aim at the crux of the matter for the week.  Here's an analogy: you don't learn how to cook simply by just reading cookbooks and watching YouTube videos.  You learn by making, using your hands, and making mistakes.</p>
+
+<h3>5. You will learn by asking questions.</h3>
+<p>It is your responsibility to ask questions early and to ask for help...</p>
+
+<h3>6. ...and I expect this Piazza board to be very active and civil.</h3>
+<p>Share thoughts and respond to other people's questions.  The TAs and myself will be online constantly, thus the idea of set office hours almost becomes moot point.  It is no secret that I respond very quickly unless I need to be away.</p>
+
+<h3>7. As for the workload...</h3>
+<p>Hard to say because the skill-set of the students varies: from those who have just completed Introduction to Computer Science and/or Data Structures to those who already have a Computer Science degree.  In terms of number of hours you should expect to spend per week, my rough estimate and expectation is anywhere from 3 to 10 hours of work a week.</p>
+
+<p>There is a very good post published by Northeastern University: "How To Be a Successful Online Learner." Link: <a href="https://www.northeastern.edu/graduate/blog/successful-online-learning-strategies/" target="_blank">https://www.northeastern.edu/graduate/blog/successful-online-learning-strategies/</a>.</p>
+
+<h2 id="policy">Course Policies</h2>
+<h3>Labs</h3>
+<p>A lab is due one week-and-a-half from the day it is assigned unless specified otherwise.</p>
+
+<p>Late assignments will not be accepted.</p>
+
+</body>
+</html>
