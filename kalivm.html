@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="stylesheets/style.css" />
+	<title>Introduction to Security - A Hypervisor and the Kali Linux Virtual Machine</title>
+</head>
+
+<body>
+	<h1>Introduction to Security</h1>
+	<h2>A Hypervisor and the Kali Linux Virtual Machine</h2>
+
+	<p>Throughout this course, you <em>should</em> do most of your work on a virtual machine. A virtual machine (VM) is
+		a software computer that, like a physical computer, runs an operating system and applications. Say that your
+		laptop runs macOS, you can run a version of Windows as a virtual machine (the "guest") on top of macOS (the
+		"host"). The value of using a virtual machine is logically separation between machines. Theoretically, a virtual
+		machine is isolated from the host. That is, mistakes made on a guest (e.g., malware) will not escape to host
+		--with a few exceptions including file sharing between host and virtual machine. To run a virtual machine, you
+		will need a hypervisor, also known as a Virtual Machine Manager (VMM). Hypervisors also provide a very handy
+		feature: taking snapshots of running virtual machine, and rolling back to a snapshot when necessary (i.e., when
+		mistakes are made).</p>
+
+	<h2>Instructions</h2>
+	<p>1. Download a hypervisor software. Options:</p>
+	<ul>
+		<li><a href="https://www.virtualbox.org/" target="_blank">VirtualBox (https://www.virtualbox.org/)</a>: Free and
+			open source</li>
+		<li>VMware Fusion for macOS or VMware Workstation for Windows or Linux: Despite being a commercial product,
+			VMware is known for its performance and features. You can get a free one year license via Tufts CS at <a
+				href="https://vmap-tufts.onthehub.com/WebStore/Welcome.aspx"
+				target="_blank">https://vmap-tufts.onthehub.com/WebStore/Welcome.aspx</a></li>
+	</ul>
+	<p>Other hypervisor software options include Parallels for macOS (commercial), and QEMU (free and open source).</p>
+
+	<p>2. Download a premade 64-bit Kali Linux VM for hypervisor you chose from <a
+			href="https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/">https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/</a>
+		This VM has Kali Linux installed as well as the tools that you will be using for this class (e.g., Wireshark,
+		nmap, ettercap, etc). Files and actions done inside the VM will stay persistent inside of the VM unlike the live
+		ISO option where everything is saved to RAM.</p>
+
+	<p>3. In either VirtualBox or VMware, open the OVA file that you downloaded.</p>
+	<ul>
+		<li>In VirtualBox: File > Import Appliance...</li>
+		<li>In VMware: File > Open</li>
+	</ul>
+
+	<h2>Why is using a Kali VM not mandatory for this class and thus strongly recommended? (notice: I wrote "you
+		<em>should</em> do most of your work on a virtual machine")</h2>
+	<ol>
+		<li>Accessibility. For students who are visually impaired, using a virtual machine can be very difficult.</li>
+		<li>Not all students have a capable laptop. Sometimes due to financial reasons, some students use Chromebooks.
+			The tools required for this course can be installed natively on macOS, Windows, and Linux.</li>
+		<li>Performance. Sometimes, using a VM can be very slow. A VM also do not use native drivers (e.g., for
+			networking).</li>
+	</ol>
+
+	<h2>Troubleshooting</h2>
+	<p><strong>The problem: you receive the following error in VMware or something similar in VirtualBox:</strong>
+		<code>Binary translation is incompatible with long mode on this platform. Long mode will be disabled in this virtual environment and applications requiring long mode will not function properly as a result. See http://vmware.com/info?id=152 for more details.</code>
+		or
+		<code>This virtual machine is configured for 64-bit guest operating systems. However, 64-bit operation is not possible.</code>
+		or <code>This host supports Intel VT-x, but Intel VT-x is disabled.</code></p>
+	<p><strong>The solution: You have to enable virtualization on your computer's BIOS.</strong></p>
+
+	<p>tl;dr Searching for "enable virtualization on [insert your computer model here]" can be very helpful because the
+		steps are often different for different computer models. It will likely involve turning off the computer,
+		turning it on while holding a key (e.g. the escape key), and then switching a menu item.</p>
+
+	<p>On many machines, how you get into your computer's BIOS is this:</p>
+	<ol>
+		<li>Restart your computer.</li>
+		<li>Within *the first few seconds of boot* on your computer, press a key. F2 or ESC are common.</li>
+		<li>Go to System Configuration > Device Configuration or similar</li>
+		<li>Check the enable VT-x</li>
+	</ol>
+	<p>More: <a
+			href="https://superuser.com/questions/593973/this-virtual-machine-is-configured-for-64-bit-guest-operating-systems-however"
+			target="_blank">https://superuser.com/questions/593973/this-virtual-machine-is-configured-for-64-bit-guest-operating-systems-however</a>
+	</p>
+	<p>On newer machines and Windows 10, the process may be different: <a
+			href="http://www.dell.com/support/article/us/en/19/sln143038/access-uefi--bios--system-setup-from-windows-on-your-dell-system"
+			target="_blank">http://www.dell.com/support/article/us/en/19/sln143038/access-uefi--bios--system-setup-from-windows-on-your-dell-system</a>
+	</p>
+
+	<h2>VM Update Notes on April 27, 2020</h2>
+	<ul>
+		<li>Because Kali Linux is updated often, I have decided to no longer maintain a custom Kali Linux VM as it makes
+			more sense to download and use VM from the official source.</li>
+	</ul>
+
+	<h2>VM Update Notes on May 8, 2019</h2>
+	<ul>
+		<li>Performed <code>dist-upgrade</code></li>
+	</ul>
+
+	<h2>VM Update Notes on July 10, 2018</h2>
+	<ul>
+		<li>Performed <code>dist-upgrade</code></li>
+		<li>Installed <code>tshark</code></li>
+	</ul>
+
+	<h2>VM Update Notes on March 2, 2018</h2>
+	<ul>
+		<li>Updated archive-keyring (<a href="https://twitter.com/nicomast31/status/968796252660891648"
+				target="_blank">https://twitter.com/nicomast31/status/968796252660891648</a>)</li>
+		<li>Updated all installed software packages (complete <code>dist-upgrade</code>)</li>
+		<li>Installed <code>python-pcapy</code></li>
+		<li>Downgraded VM to make it accessible to older versions of VMware</li>
+	</ul>
+
+	<h2>References</h2>
+	<ol>
+		<li><a href="http://www.howtogeek.com/66734/htg-explains-what-is-a-hypervisor/"
+				target="_blank">http://www.howtogeek.com/66734/htg-explains-what-is-a-hypervisor/</a></li>
+		<li><a href="https://security.stackexchange.com/questions/9011/does-a-virtual-machine-stop-malware-from-doing-harm"
+				target="_blank">https://security.stackexchange.com/questions/9011/does-a-virtual-machine-stop-malware-from-doing-harm</a>
+		</li>
+	</ol>
+</body>
+
+</html>
