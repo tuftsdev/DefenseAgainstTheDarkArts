@@ -14,35 +14,37 @@ In addition, please read "The command-line, for cybersec" by Rob Graham: https:/
 
 ### Answer the questions below.  Answers may vary depending on operating system used.
 
-1. How would you find the path to the python command?
+1. How would you find the path (i.e., location) to the `gcc` command?
 
 2. How would you download a file from the Internet?
 
-3. What command can you use to find out your IP address and MAC address?
+3. What is the full command to read the manual page of the command that formats and displays the on-line manual pages? (NOTE: there is no typo to this question)
 
-4. What command can you use to show all the processes that are running on the system?
+4. What command can you use to find out your IP address and MAC address?
 
-5. What command can you use to get more details about running processes listening on ports?
+5. What command can you use to show all the processes that are running on the system?
 
-6. What command with flag could you use to list every file, including hidden files, on the entire system, showing their owner, location, and access time? Please also note the flags that you used with command.
+6. What command can you use to get more details about running processes listening on ports?
 
-7. Assume you found a file named `warrent.pdf`. What command could you use to find out what type of file this was?
+7. What command with flag could you use to list every file, including hidden files, on the entire system, showing their owner, location, and access time? Please also note the flags that you used with command.
 
-8. So you discovered that `warrent.pdf` is a binary executable. What command could you use to extract any readable information from the file without running it? Also, try this on a compressed file such a ZIP or JAR
+8. Assume you found a file named `warrent.pdf`. What command could you use to find out what type of file this was?
 
-9. What command can you use to find the IP address-to-MAC address mappings for systems on the local network?
+9. So you discovered that `warrent.pdf` is a binary executable. What command could you use to extract any readable information from the file without running it? Also, try this on a compressed file such a ZIP or JAR
 
-10. Consider the following IP address: 5[dot]188[dot]86[dot]172. Where is the computer with that IP address located --in what country?
+10. What command can you use to find the IP address-to-MAC address mappings for systems on the local network?
 
-11. For the previous question, what command did you use to determine the location of the computer?
+11. Consider the following IP address: 	46[dot]252[dot]26[dot]153. Where is the computer with that IP address located --in what country?
 
-12. What command can you use to securely delete a file?
+12. For the previous question, what command did you use to determine the location of the computer?
 
-13. What command can you use to see if you are a computer administrator or superuser?
+13. What command can you use to securely delete a file?
 
-14. What command can you use to see list of previous commands you have entered on command line?
+14. What command can you use to see if you are a computer administrator or superuser?
 
-15. What command can you use to see list of scheduled tasks running on your computer?
+15. What command can you use to see list of previous commands you have entered on command line?
+
+16. What command can you use to see list of scheduled tasks running on your computer?
 
 ## Part 2, Wargames
 
