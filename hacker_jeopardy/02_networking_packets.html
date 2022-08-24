@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Original source and credits: https://jeopardylabs.com -->
+<title>Introduction to Security: Week 2 - Networking</title>
+<meta name="description" content="Jeopardy"/>
+<base href="https://jeopardylabs.com" />
+<style>/*!
+    * Bootstrap Reboot v4.0.0-beta.2 (https://getbootstrap.com)
+    * Copyright 2011-2017 The Bootstrap Authors
+    * Copyright 2011-2017 Twitter, Inc.
+    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+    * Forked from Normalize.css, licensed MIT (https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
+    */::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:transparent}@-ms-viewport{width:device-width}article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus{outline:0!important}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title],abbr[title]{text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;cursor:help;border-bottom:0}address{margin-bottom:1rem;font-style:normal;line-height:inherit}dl,ol,ul{margin-top:0;margin-bottom:1rem}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}dt{font-weight:700}dd{margin-bottom:.5rem;margin-left:0}blockquote{margin:0 0 1rem}dfn{font-style:italic}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}a{color:#007bff;text-decoration:none;background-color:transparent;-webkit-text-decoration-skip:objects}a:hover{color:#0056b3;text-decoration:underline}a:not([href]):not([tabindex]){color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus,a:not([href]):not([tabindex]):hover{color:inherit;text-decoration:none}a:not([href]):not([tabindex]):focus{outline:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}pre{margin-top:0;margin-bottom:1rem;overflow:auto;-ms-overflow-style:scrollbar}figure{margin:0 0 1rem}img{vertical-align:middle;border-style:none}svg:not(:root){overflow:hidden}[role=button],a,area,button,input:not([type=range]),label,select,summary,textarea{-ms-touch-action:manipulation;touch-action:manipulation}table{border-collapse:collapse}caption{padding-top:.75rem;padding-bottom:.75rem;color:#868e96;text-align:left;caption-side:bottom}th{text-align:inherit}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}button,input,optgroup,select,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=date],input[type=datetime-local],input[type=month],input[type=time]{-webkit-appearance:listbox}textarea{overflow:auto;resize:vertical}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;max-width:100%;padding:0;margin-bottom:.5rem;font-size:1.5rem;line-height:inherit;color:inherit;white-space:normal}progress{vertical-align:baseline}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{outline-offset:-2px;-webkit-appearance:none}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}output{display:inline-block}summary{display:list-item}template{display:none}[hidden]{display:none!important}body{overflow:hidden}body{background-color:#2a3698;height:100%;font-family:Verdana,Arial,Helvetica,sans-serif;overflow-y:hidden}*{box-sizing:border-box}input,select,textarea{display:block;font-family:Verdana,Arial,Helvetica,sans-serif;margin:auto}.hide{display:none}h3{font-size:20px}.point-cell,h3{color:#ffff5f;color:#fff;text-align:center;font-weight:700}.modal-wrapper{background-color:rgba(0,0,0,.5);display:none;position:absolute;top:0;left:0;right:0;bottom:0;z-index:2;height:100%}.modal{position:relative;top:50%;transform:translate(0,-50%);background-color:#fff;z-index:2;border-radius:5px;background-color:#efefef;overflow:auto;max-height:calc(100% - 50px);max-width:1000px;margin-left:auto;margin-right:auto}#teams{position:absolute;bottom:0;text-align:center;left:0;right:0;z-index:11;display:flex}#teams .team{display:inline-block;margin-left:10px;margin-right:10px;border:1px solid #fff;padding:5px;background-color:#fff;border-top-left-radius:2px;border-top-right-radius:2px}#teams .team:first-of-type{margin-left:50px}#teams .team:last-of-type{margin-right:50px}#teams h3.name{border-bottom:2px solid #000;text-align:center;color:#000;display:inline-block;white-space:nowrap}#teams h3.points{background-color:#2a3698;color:#fff}.pointer span{display:inline-block;width:45%;color:#fff;font-size:30px;line-height:30px;cursor:pointer;background-color:#fff;font-family:monospace;font-weight:700}.pointer .plus{color:#2da94e}.pointer .minus{color:red}#gameplay{filter:blur(5px);width:100%;position:absolute;top:0;left:0;bottom:0;right:0}#menu-links{font-size:20px;margin-top:20px}#fullscreen{margin-top:20px}#options select{font-size:22px;display:inline-block;height:40px;-webkit-appearance:menulist-button}#options input[type=button]{font-size:22px;display:inline;height:40px}#options a{color:#fff;text-decoration:underline}#options a:hover{text-decoration:none}#re-init{background:0 0;color:#fff;margin-left:10px;font-size:14px!important;height:auto!important;border:none}.click-to-zoom{display:none}.grid{opacity:0}#question-modal{transform-origin:top left}#question-modal>div{flex-direction:row}#modal-header{display:flex;padding:5px;text-align:center;color:#fff;background-color:#151b4b;z-index:3}#modal-header>div{padding:5px;text-align:center;flex:1;align-items:center;justify-content:center;display:flex;max-width:100%}#modal-header>div>div{max-width:100%}#question-modal{background-color:#2a3698;border:3px solid #ff0;z-index:10}.expanded{transition:.5s all ease;border-width:0}.modal,.modal-body{background-color:transparent;color:#fff;text-align:center}.modal-body .modal-inner{overflow:auto;padding-left:20px;padding-right:20px;flex:1}.modal-body{width:100%;display:flex;align-items:center;padding-top:20px;justify-content:center}#question-title{font-weight:700;padding-left:10%;padding-right:10%}.answer,.question{margin:auto}#question-modal .question{display:none;opacity:0}#answer-button,#continue-button{cursor:pointer}#question-modal .question{border-top:3px dotted #fff;margin-top:10px;padding-top:10px}#question-modal .reveal{transition:max-height 2s ease,opacity 2s ease;opacity:1}.mathy{background-color:transparent}kbd{-moz-border-radius:3px;-moz-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 2px #fff inset;-webkit-border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 2px #fff inset;background-color:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 2px #fff inset;color:#333;display:inline-block;font-family:Arial,Helvetica,sans-serif;line-height:1.4;margin:0 .1em;padding:.1em .6em;text-shadow:0 1px 0 #fff}#options{display:block}.grid{opacity:0}#first-load{max-width:500px;margin:auto;background-color:#ffff5f;border-radius:3px;color:#000;padding:20px;margin-bottom:20px}#first-load a{color:#000}.cell.points .cell-inner{font-weight:700}.menu-picker{background-color:#131844;align-items:center;justify-content:center;font-weight:700;line-height:1.25;text-transform:uppercase;align-self:flex-end;padding:10px 10px;border-right:2px solid #999;border-top:2px solid #999;margin-right:10px;position:absolute;color:#999;text-decoration:none;bottom:0}.menu-picker:hover{color:#fff;text-decoration:none;border-color:#fff}*{box-sizing:border-box}.cell-inner p:last-child{margin-bottom:0}#grid{transition:opacity 1s}.grid{padding:10px;background:linear-gradient(to top,#1d2675 0,#2a3698 100%);position:relative;transition:.1s;z-index:1;transform-origin:center left;font-size:12px;display:flex;height:100vh;flex-direction:column;align-items:stretch}.grid-zoomed{z-index:10}.click-to-zoom{opacity:0;transition:.3s;position:absolute;top:0;right:0}.grid:hover .click-to-zoom{opacity:1}.grid.grid-zoomed .click-to-zoom{opacity:0}.click-to-zoom span{background-color:#ccc;font-size:14px;display:inline-block;padding:3px}.grid-row{display:flex;flex:1}.grid-cell{border:3px solid #000;overflow:hidden;position:relative;background-color:#2a3698;transition:.3s;flex:1}.grid-cell-zoomed{transform:scale(2);z-index:10}.grid-last-row{border-bottom:3px solid #000}.grid-first-row{border-top:3px solid #000}.grid-row-questions{border-left:3px solid #000;border-right:3px solid #000}.grid-row-cats .grid-cell{border-color:transparent}.grid-row-cats-resize-done{flex:none}.cell-group{backface-visibility:hidden;transform-style:preserve-3d}.cell{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;backface-visibility:hidden;perspective:1000px;transform-style:preserve-3d;-webkit-perspective:0;-webkit-backface-visibility:hidden;width:100%;height:100%}.cell.back{transform:rotateY(180deg)}.cell.front{z-index:2}.cell.back,.cell.front{cursor:pointer;overflow:hidden}.category,.cell-group,.cell.back,.cell.front{transition:.3s}.cell-group:hover{border-color:#ff0}.cell-group:hover .front{transform:rotateY(180deg)}.cell-group:hover .back{transform:rotateY(0)}.cell-group:hover .back,.cell-group:hover .front{border-color:#ff0}.cell-group:hover .back,.cell-group:hover .front{transition:.6s}.cell-group.empty{pointer-events:none}.cell-group.empty:hover{border-color:#000;transform:none}.points .back,.points .front{display:none}.grid-play .cell-group{cursor:pointer}.grid-play .cell-group:hover{background-color:rgba(255,255,255,.05)}.inert .cell-inner{opacity:.05}.grid.grid-play{background:0 0}.resizing{transition:none!important}</style>
+</head>
+
+<body>
+    <div id="gameplay">
+        <div class="grid grid-play" style="height:100vh; ">
+            <div class="grid-row grid-row-cats" style="">
+                <div class="grid-cell " data-row="0" data-col="0">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell">Networking Basics</div>
+                    </div>
+                </div>
+                <div class="grid-cell " data-row="0" data-col="1">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell">Network Protocols</div>
+                    </div>
+                </div>
+                <div class="grid-cell " data-row="0" data-col="2">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell">The OSI Model</div>
+                    </div>
+                </div>
+                <div class="grid-cell " data-row="0" data-col="3">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell">S-Words</div>
+                    </div>
+                </div>
+                <div class="grid-cell " data-row="0" data-col="4">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell">Numerology</div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row grid-row-questions  grid-first-row">
+                <div class="cell-group grid-cell" data-row="1" data-col="0">
+                    <div class="cell points">
+                        <div class="cell-inner">100</div>
+                        <div class="front answer">A unit of data in computer networking</div>
+                        <div class="back question">What is a packet</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="1" data-col="1">
+                    <div class="cell points">
+                        <div class="cell-inner">100</div>
+                        <div class="front answer">It's how the web works: a request-response protocol</div>
+                        <div class="back question">What is the HyperText Transfer Protocol (HTTP)</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="1" data-col="2">
+                    <div class="cell points">
+                        <div class="cell-inner">100</div>
+                        <div class="front answer">Cables, repeaters, hubs, binary transmission </div>
+                        <div class="back question">What is the Physical layer</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="1" data-col="3">
+                    <div class="cell points">
+                        <div class="cell-inner">100</div>
+                        <div class="front answer">The first part of the TCP handshake</div>
+                        <div class="back question">What is SYN</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="1" data-col="4">
+                    <div class="cell points">
+                        <div class="cell-inner">100</div>
+                        <div class="front answer">The number of layers on the OSI model</div>
+                        <div class="back question">What is 7</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-row grid-row-questions">
+                <div class="cell-group grid-cell" data-row="2" data-col="0">
+                 <div class="cell points">
+                     <div class="cell-inner">200</div>
+                        <div class="front answer">A file containing many packets</div>
+                        <div class="back question">What is a PCAP file</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="2" data-col="1">
+                    <div class="cell points">
+                        <div class="cell-inner">200</div>
+                        <div class="front answer">This is the "telephone book" of the Internet, translates domain names into IP addresses</div>
+                        <div class="back question">What is DNS</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="2" data-col="2">
+                    <div class="cell points">
+                        <div class="cell-inner">200</div>
+                        <div class="front answer">This layer has all the things that you know and use: email, web browsing, file transfer</div>
+                        <div class="back question">What is the Application layer</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="2" data-col="3">
+                    <div class="cell points">
+                        <div class="cell-inner">200</div>
+                        <div class="front answer">You use this protocol to securely connect to a remote server (e.g., homework.cs.tufts.edu)</div>
+                        <div class="back question">What is SSH</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="2" data-col="4">
+                    <div class="cell points">
+                        <div class="cell-inner">200</div>
+                        <div class="front answer">The TCP handshake process is commonly known as this</div>
+                        <div class="back question">What is the Three Way Handshake</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-row grid-row-questions">
+                <div class="cell-group grid-cell" data-row="3" data-col="0">
+                 <div class="cell points">
+                     <div class="cell-inner">300</div>
+                        <div class="front answer">This is the world's largest computer network</div>
+                        <div class="back question">What is the Internet</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="3" data-col="1">
+                    <div class="cell points">
+                        <div class="cell-inner">300</div>
+                        <div class="front answer">No handshaking, just throwing data at you</div>
+                        <div class="back question">What is UDP</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="3" data-col="2">
+                    <div class="cell points">
+                        <div class="cell-inner">300</div>
+                        <div class="front answer">The layer that provides source and destination IPv4 address</div>
+                        <div class="back question">What is the Internet layer</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="3" data-col="3">
+                    <div class="cell points">
+                        <div class="cell-inner">300</div>
+                        <div class="front answer">A computer that provides data to other computers</div>
+                        <div class="back question">What is a server</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="3" data-col="4">
+                    <div class="cell points">
+                        <div class="cell-inner">300</div>
+                        <div class="front answer">The common port number for HTTP</div>
+                        <div class="back question">What is 80</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-row grid-row-questions">
+                <div class="cell-group grid-cell" data-row="4" data-col="0">
+                 <div class="cell points">
+                     <div class="cell-inner">400</div>
+                        <div class="front answer">A famous graphical and extensive packet analyzer, formerly known as Ethereal</div>
+                        <div class="back question">What is Wireshark</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="4" data-col="1">
+                    <div class="cell points">
+                        <div class="cell-inner">400</div>
+                        <div class="front answer">Internet Control Message Protocol (ICMP) is commonly known for this</div>
+                        <div class="back question">What is <code>ping</code></div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="4" data-col="2">
+                    <div class="cell points">
+                        <div class="cell-inner">400</div>
+                        <div class="front answer">This is where the Transmission Control Protocol (TCP) resides; providing source and destination ports, and data</div>
+                        <div class="back question">What is the Transport layer</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="4" data-col="3">
+                    <div class="cell points">
+                        <div class="cell-inner">400</div>
+                        <div class="front answer">The layer on the OSI model that maintains connections</div>
+                        <div class="back question">What is the Session layer</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="4" data-col="4">
+                    <div class="cell points">
+                        <div class="cell-inner">400</div>
+                        <div class="front answer">The common port number for SSH</div>
+                        <div class="back question">What is 22</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-row grid-row-questions">
+                <div class="cell-group grid-cell" data-row="5" data-col="0">
+                 <div class="cell points">
+                     <div class="cell-inner">500</div>
+                        <div class="front answer">This is a series of organizational and technical documents containing specification and policies pertaining to the different aspects of the Internet.</div>
+                        <div class="back question">What is Request for Comments (RFC)</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="5" data-col="1">
+                    <div class="cell points">
+                        <div class="cell-inner">500</div>
+                        <div class="front answer">Maps IP address to MAC address on a network, used for spoofing too</div>
+                        <div class="back question">What is the Address Resolution Protocol (ARP)</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="5" data-col="2">
+                    <div class="cell points">
+                        <div class="cell-inner">500</div>
+                        <div class="front answer">Think MAC address, a unique identifier assigned to a network device</div>
+                        <div class="back question">What is the Data Link layer</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="5" data-col="3">
+                    <div class="cell points">
+                        <div class="cell-inner">500</div>
+                        <div class="front answer">A software structure within a network node of a computer network that serves as an endpoint for sending and receiving data across the network</div>
+                        <div class="back question">What is a socket</div>
+                    </div>
+                </div>
+                <div class="cell-group grid-cell" data-row="5" data-col="4">
+                    <div class="cell points">
+                        <div class="cell-inner">500</div>
+                        <div class="front answer">Because everyone got this wrong on Hacker Jeopardy at DEF CON: the commonly known port number for File Transfer Protocol (FTP) (https://twitter.com/defcon/status/1160056016148393984?lang=en)</div>
+                        <div class="back question">What is 21</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="click-to-zoom">
+                <span>Click to zoom</span>
+            </div>
+        </div>
+
+        <div id="teams">
+            <a class="menu-picker" href="javascript:backToMenu('menu')">M<br>e<br>n<br>u</a>
+            <div style="display:flex; margin-left:auto; margin-right:auto; overflow:auto;">
+                <div class="team" style="display:none">
+                    <h3 class="name" contenteditable="true">Team 1</h3>
+                    <h3 class="points" contenteditable="true">0</h3>
+                    <div class="pointer">
+                        <span class="plus">+</span>
+                        <span class="minus">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="question-modal" class="modal-wrapper">
+            <div id="modal-header">
+                <div id="continue-button">
+                    <div>Continue <kbd>ESC</kbd></div>
+                </div>
+                <div id="question-title"></div>
+                <div id="answer-button">
+                    <div>Reveal Correct Response <kbd>Spacebar</kbd></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="options" class="modal-wrapper">
+        <div class="modal">
+            <h1>Networking and Packets</h1>
+            <div id="team-chooser-wrapper">
+                <select id="team-chooser">
+                    <option value="0">No teams</option>
+                    <option value="1">1 team</option>
+                    <option value="2">2 teams</option>
+                    <option value="3" selected="true">3 teams</option>
+                    <option value="4">4 teams</option>
+                    <option value="5">5 teams</option>
+                    <option value="6">6 teams</option>
+                    <option value="7">7 teams</option>
+                    <option value="8">8 teams</option>
+                    <option value="9">9 teams</option>
+                    <option value="10">10 teams</option>
+                    <option id="last-option" value="more">Custom</option>
+                </select>
+                <input class="submit" type="button" id="submit" value="Start" onclick="game.init()" />
+                <span id="reset-all">
+                    <input type="button" id="re-init" value="Reset" />
+                </span>
+            </div>
+
+            <p id="fullscreen" style="display:none" align="center"><span id="windows" style="display:none">Press <kbd >F11</kbd></span> <span id="mac" style="display:none">Select menu option <kbd >View &gt; Enter Fullscreen</kbd></span> for full-screen mode</p>
+            <p>Original source: <a href="https://jeopardylabs.com/" target="_blank">https://jeopardylabs.com/</a></p>
+            <script>0==window.navigator.platform.indexOf("Mac")?(document.getElementById("fullscreen").style.display="block",document.getElementById("mac").style.display="inline"):0==window.navigator.platform.indexOf("Win")&&(document.getElementById("fullscreen").style.display="block",document.getElementById("windows").style.display="inline");</script>
+            <script>function removeClass(e,t){for(var n=document.querySelectorAll(e),r=0;r<n.length;r++)n[r].classList.remove(t)}function debounce(e,t,n){var r;return function(){var i=this,l=arguments,o=n&&!r;clearTimeout(r),r=setTimeout(function(){r=null,n||e.apply(i,l)},t),o&&e.apply(i,l)}}function ready(e){"loading"!=document.readyState&&document.body?e():document.addEventListener("DOMContentLoaded",e)}function capSizes(e,t,n){for(var r=document.createTreeWalker(e,NodeFilter.SHOW_ELEMENT,null,!1),i=!1;r.nextNode();)if(node=r.currentNode,"IMG"==node.tagName||"VIDEO"==node.tagName||"IFRAME"==node.tagName)try{node.style.maxWidth=t+"px",node.style.maxHeight=n+"px",i=!0}catch(e){}return i}Math.log2||(Math.log2=function(e){return Math.log(e)*Math.LOG2E});var shrink_cell_cache={},enable_caching=!1;function shrink_cell(e,t,n,r,i,l,o){if(!enable_caching)return _shrink_cell(e,t,n,r,i,l,o);var a=[n,r,e.innerHTML].join("."),c=shrink_cell_cache[a];c?(t.style.fontSize=c.font_size+"px",t.style.transform=(l||"")+" scale("+c.scale+") ",capSizes(e,n,r)):shrink_cell_cache[a]=_shrink_cell(e,t,n,r,i,l,o)}function initDivs(e){if(test_divs.length-1!=e)for(var t=0;t<=e;t++){var n;if(!(n=test_divs[t]))(n=document.createElement("div")).style.display="block",n.style.position="absolute",n.style.left="-100000px",n.style.top=-120*t+"px",n.style.fontFamily="Verdana, Arial, Helvetica, sans-serif",n.style.color="#000",n.style.border="3px solid black",n.style.fontSize=t+"px",test_divs[t]=n,document.querySelectorAll("body")[0].appendChild(n)}}function shrink_in_place(e,t,n){var r=e,i=t;i=binarySearch({length:t+1},function(e,t,n){r.style.fontSize=n+"px";var i=r.scrollWidth>r.clientWidth,l=r.scrollHeight>r.clientHeight;return i||l});return i-=1,i=Math.max(n,Math.min(i,t)),r.style.fontSize=i+"px",i}function binarySearch(e,t){for(var n=-1,r=e.length;1+n<r;){var i=n+(r-n>>1);t(e[i],e,i)?r=i:n=i}return r}function escapeHtml(e){return e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;")}function getText(e){for(var t=document.createTreeWalker(e,NodeFilter.SHOW_ELEMENT|NodeFilter.SHOW_TEXT,null,!1),n=[];t.nextNode();){var r=t.currentNode;3==r.nodeType?n.push(escapeHtml(r.textContent)):"BR"==r.tagName?n.push("<BR>"):"P"==r.tagName&&0!=n.length&&n.push("<BR>")}return n.join("")}function _shrink_cell(e,t,n,r,i,l,o,a){void 0===o&&(o=!0),void 0===a&&(a=1);var c=getText(t||e);initDivs(i);for(var s=0;s<=i;s++)dummy_element=test_divs[s],dummy_element.innerHTML=c,dummy_element.style.width=n+"px",dummy_element.style.height=r+"px";var u=binarySearch(test_divs,function(e){var t=e.scrollWidth>e.clientWidth,n=e.scrollHeight>e.clientHeight;return t||n});if(u-=1,u=Math.max(a,Math.min(u,i)),!t)return{font_size:u};e.style.fontSize="",t.style.fontSize=u+"px",t.style.transform="";if(o)capSizes(e,n,r);var d=getBoundingClientRect(t),h=d.width,m=d.height,f=Math.min(1,Math.min(1*(n-0)/h,1*(r-0)/m));return t.style.transform=(l||"")+" scale("+f+") ",{font_size:u,scale:f}}function getBoundingClientRect(e){var t=e.getBoundingClientRect();return{top:t.top+(window.scrollY||document.documentElement.scrollTop||0),left:t.left+(window.scrollX||document.documentElement.scrollLeft||0),width:t.width,height:t.height,x:t.x,y:t.y}}test_divs=[];var render_queue=[],render_queue_index=0,render_interval=null,max_renderers=1,work_scheduled=!1;function resetRenderQueue(){render_queue=[],render_queue_index=0}function renderQueue(){for(var e=+new Date;+new Date-e<10&&render_queue_index<render_queue.length&&render_queue.length;){0;var t=render_queue[render_queue_index];t[0].apply(t[1],t.slice(2)),render_queue_index++}work_scheduled=!(render_queue_index>=render_queue.length)&&setTimeout(renderQueue)}function enqueueRender(){var e=Array.prototype.slice.call(arguments);e[0].apply(e[1],e.slice(2))}function matches(e,t){return(e.matches||e.matchesSelector||e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||e.oMatchesSelector).call(e,t)}function on(e,t,n,r){for(var i=e.split(" "),l=0;l<i.length;l++){e=i[l];document.addEventListener(e,function(e){for(var r=e.target;r&&r!=this;r=r.parentNode)if(matches(r,t)){n.call(r,e);break}},r||!1)}}function closest(e,t){do{if(matches(e,t))return e}while(e=e.parentElement);return null}function coordsFromEvent(e){return e.touches&&e.touches.length>0?e.touches[0]:e}function retypeset(e,t){if(!window.MathJax)return!1;MathJax.Hub.Config({asciimath2jax:{delimiters:[["`","`"]],skipTags:["script","noscript","style","textarea","pre","code","body"]}});for(var n=(e=e||document).querySelectorAll(".mathy"),r=0;r<n.length;r++){var i=n[r];i.innerText=i.getAttribute("data-original")||"`"+i.innerText+"`",i.setAttribute("data-original",i.innerText),MathJax.Hub.Queue(["Typeset",MathJax.Hub,i])}return n.length>0&&(MathJax.Hub.Queue([t,window]),!0)}function prepwork(e,t){void 0===t&&(t=1);var n=e.parentElement.clientWidth,r=e.parentElement.clientHeight,i=e.querySelectorAll(".cell-inner")[0];return shrink_cell(e,i,n*t,r*t,32,"","play"!=mode),i}function minirender(e,t,n){void 0===n&&(n=1),window.nextthing=function(){setTimeout(function(){e.classList.add("resizing");e.offsetTop;miniresize(e,e.querySelectorAll(".grid-row-cats .cell"),!0,1),miniresize(e,e.querySelectorAll(".grid-row-questions .cell"),!1,n),e.classList.remove("resizing"),t&&t(e)})},retypeset(e,"nextthing")||window.nextthing()}function miniresize(e,t,n,r){if(n){var i=e.querySelectorAll(".grid-row-cats")[0];i.classList.remove("grid-row-cats-resize-done"),i.style.height="auto";for(var l=0,o=0;o<t.length;o++){(c=t[o]).style.paddingTop=0;var a=prepwork(c);c.client_height=a.clientHeight,l=Math.max(l,a.clientHeight)}for(o=0;o<t.length;o++){(c=t[o]).style.paddingTop=l-c.client_height+"px"}i.classList.add("grid-row-cats-resize-done"),i.style.height=l+"px"}else for(o=0;o<t.length;o++){var c;enqueueRender(prepwork,null,c=t[o],r)}}</script>
+            <script>var modal=function(){},game={},mode="play",grid=null;function getCurrentState(){for(var e=[],t=document.querySelectorAll(".team"),n=0;n<t.length;n++){var i=t[n],r=i.querySelectorAll(".name")[0].textContent,o=i.querySelectorAll(".points")[0].textContent;e[n]={name:r,points:o}}var l={},a=document.querySelectorAll(".grid-row-questions .inert");for(n=0;n<a.length;n++){l[a[n].getAttribute("id")]=!0}return{teams:e,inerts:l}}function getOldState(){try{var e=localStorage.getItem("game-2806969")}catch(e){return null}return e?JSON.parse(e):null}function clearState(){try{localStorage.removeItem("game-2806969")}catch(e){}}function resize(){var e=getBoundingClientRect(document.getElementById("teams")),t=document.querySelectorAll(".grid-row").length;if(0==e.height)var n=window.innerHeight;else n=e.top+(window.innerHeight-e.height)/t/4;grid.style.height=n+"px",minirender(grid,function(e){e.style.opacity=1},.6)}ready(function(){grid=document.querySelectorAll(".grid")[0],window.addEventListener("resize",debounce(resize,100,!1)),resize(),renderState(initial_state),window.addEventListener("keydown",function(e){modal.is_open&&(27==e.keyCode?(e.preventDefault(),modal.hide()):32==e.keyCode&&(e.preventDefault(),modal.reveal()))},!1);var e=debounce(function(){try{localStorage.setItem("game-2806969",JSON.stringify(getCurrentState()))}catch(e){}},100,!1);on("keyup change input blur focus","#teams .name, #teams .points",e),on("click","#re-init",function(e){e.preventDefault(),confirm("This will clear the scores and team names, and start a new game. Click OK if you want to do this")&&(clearState(),game.init(!0))}),on("click","#answer-button",function(e){modal.reveal()}),on("click","#continue-button",function(e){modal.hide()}),on("click",".grid-row-questions .grid-cell",function(e){modal.show(this)}),on("mousedown",".minus, .plus",function(e){e.preventDefault()}),on("click",".minus, .plus",function(t){var n=closest(this,".team").querySelectorAll(".points")[0],i=parseInt(n.innerText),r=document.querySelectorAll(".active-question .cell-inner")[0],o=document.querySelectorAll(".grid-row-questions .cell-inner")[0],l=parseInt(r?r.innerText:o.innerText);this.classList.contains("minus")&&(l=-l),n.innerText=i+l,r&&document.querySelectorAll(".active-question")[0].classList.add("inert"),e()})});</script>
+            <script>function clearLocalStorage(){for(var e=localStorage.length-1;e>=0;e--){var t=localStorage.key(e);0==t.indexOf("jeopardy-2806969")&&localStorage.removeItem(t)}}initial_state={page:"menu"};try{history.replaceState(initial_state,"JeopardyLabs")}catch(e){}function hideModal(){modal.is_open=!1;var e=document.getElementById("question-modal");e.style.display="none",e.classList.remove("expanded"),e.style.borderWidth="3px",e.querySelectorAll(".modal-inner")[0].innerHTML=""}function renderMenu(){var e=getOldState()||!game.first_render;if(game.first_render)if(e){document.querySelectorAll("#submit")[0].value="Continue",document.querySelectorAll("#reset-all")[0].style.display="";var t=e.teams.length,l=document.getElementById("team-chooser");if(t>10){var o=document.createElement("option");o.setAttribute("value",t),o.textContent=t+" teams",l.insertBefore(o,document.getElementById("last-option"))}document.getElementById("team-chooser").value=t}else document.querySelectorAll("#submit")[0].value="Start",document.querySelectorAll("#reset-all")[0].style.display="none";else document.querySelectorAll("#submit")[0].value="Continue",document.querySelectorAll("#reset-all")[0].style.display=""}function renderState(e){document.querySelectorAll("#options")[0].style.display="none",document.querySelectorAll("#teams")[0].style.display="none",document.querySelectorAll("#gameplay")[0].style.filter="",hideModal(),"menu"==e.page?(document.querySelectorAll("#options")[0].style.display="block",renderMenu()):"game"==e.page?(document.getElementById("teams").style.display="",document.querySelectorAll("#gameplay")[0].style.filter="blur(0px)"):"slide"==e.page&&(document.getElementById("teams").style.display="",document.querySelectorAll("#gameplay")[0].style.filter="blur(0px)",modal.show(document.getElementById(e.cell),!0))}function trimHTML(e){for(var t=document.createTreeWalker(e,NodeFilter.SHOW_ELEMENT|NodeFilter.SHOW_TEXT,null,!1);t.nextNode();)var l=t.currentNode;var o=[];do{if(3==(l=t.currentNode).nodeType&&""==(l.data||"").trim())o.push(l);else if("SCRIPT"==l.tagName);else if("BR"==l.tagName)o.push(l);else{if("P"!=l.tagName||""!=(l.innerText||"").trim())break;o.push(l)}}while(t.previousNode());for(var n=0;n<o.length;n++)try{o[n].parentElement.removeChild(o[n])}catch(e){console.log("passing")}}function backToGame(){"slide"==window.history.state.page&&window.history.go(-1)}function backToMenu(){renderState({page:"menu"});var e=window.history.state;"slide"==e.page?window.history.go(-2):"game"==e.page&&window.history.go(-1)}game.first_render=!0,game.initTeam=function(e){document.getElementById("teams").style.display="flex";for(var t=document.querySelectorAll("#teams .team"),l=0;l<e;l++)t[l]},game.init=function(e){var t=document.querySelectorAll("#options select")[0].value;if(isNaN(t)){t=0;do{var l=prompt("Enter the number of teams you have");t=parseInt(l,10)||0}while(t<=0)}renderState({page:"game"}),document.getElementById("teams").style.display="flex";for(var o=document.querySelectorAll("#teams .team"),n=0;n<o.length;n++)o[n].style.display="none";for(n=0;n<t;n++){if(r=o[n])r=o[n];else{var r=o[0].cloneNode(!0);o[0].parentElement.appendChild(r),r.querySelectorAll(".name")[0].textContent="Team "+(n+1),r.querySelectorAll(".points")[0].textContent="0"}r.style.display="block"}o=document.querySelectorAll("#teams .team");if(game.first_render){var a=getOldState();if(a){for(n=0;n<t;n++){r=o[n];if(a.teams[n]){var i=a.teams[n].name,s=a.teams[n].points;r.querySelectorAll(".name")[0].textContent=i,r.querySelectorAll(".points")[0].textContent=s}}var d=a.inerts;for(var c in d)try{document.getElementById(c).classList.add("inert")}catch(e){continue}}}else if(e){for(n=0;n<t;n++){(r=o[n]).querySelectorAll(".name")[0].textContent="Team "+(n+1),r.querySelectorAll(".points")[0].textContent="0"}removeClass(".inert","inert")}resize();try{history.pushState({page:"game"},"JeopardyLabs")}catch(e){}game.first_render=!1},window.onpopstate=function(e){renderState(window.history.state)},modal.reveal=function(){var e=document.querySelectorAll("#question-modal .question")[0];e.style.display="block";var t,l,o,n,r,a,i,s=document.querySelectorAll("#question-modal .modal-inner")[0],d=(s.scrollTop,getBoundingClientRect(s).top),c=getBoundingClientRect(e).top;l=c-d,o=250,n=(t=s).scrollTop,r=l-n,a=0,(i=function(){var e,l,s,d=(e=a+=20,l=n,s=r,(e/=o/2)<1?s/2*e*e+l:-s/2*(--e*(e-2)-1)+l);t.scrollTop=d,a<o&&setTimeout(i,20)})(),setTimeout(function(){e.classList.add("reveal")},0),document.querySelectorAll(".active-question")[0].classList.add("inert")},modal.show=function(e,t){removeClass(".active-question","active-question"),e.classList.add("active-question");e.getAttribute("data-row");var l=e.getAttribute("data-col"),o=document.querySelectorAll(".grid-row-cats .cat-cell")[l].innerText,n=e.querySelectorAll(".cell-inner")[0].innerText;document.querySelectorAll("#question-title")[0].innerText=o+" for "+n;var r=e.getBoundingClientRect(),a=document.getElementById("question-modal");if(a.style.display="block",a.style.opacity=0,document.querySelectorAll("#question-modal .modal-inner")[0].innerHTML=e.querySelectorAll(".answer")[0].outerHTML+"\n"+e.querySelectorAll(".question")[0].outerHTML,!t)try{console.log("pre length",window.history.length),history.pushState({page:"slide",cell:e.getAttribute("id")},"JeopardyLabs"),console.log("post length",window.history.length)}catch(e){}setTimeout(function(){var e=document.querySelectorAll("#question-modal .answer")[0];try{e.querySelectorAll("video, audio").get(0).play()}catch(e){}try{var t=e.querySelectorAll("iframe")[0],l=t.getAttribute("src")||"",o=document.createElement("a");o.href=l,"www.youtube.com"==o.hostname&&(o.search=(o.search||"?")+"&autoplay=1",t.contentWindow.location.replace(o.toString()))}catch(e){}},500),document.querySelectorAll("#question-modal .modal-body .modal-inner")[0].scrollTop=0,trimHTML(document.querySelectorAll("#question-modal .answer")[0]),trimHTML(document.querySelectorAll("#question-modal .question")[0]);var i=getBoundingClientRect(document.querySelectorAll("#question-modal .modal-body")[0]).top,s=document.querySelectorAll("#teams")[0],d=(getBoundingClientRect(s).top||window.innerHeight)-i-20;document.querySelectorAll("#question-modal .modal-inner")[0].style.maxHeight=d+"px",document.querySelectorAll("#question-modal .modal-body")[0].style.height=d+"px";var c=document.querySelectorAll("#question-modal .question")[0];c.style.display="block";var u=document.querySelectorAll("#question-modal .modal-inner")[0];shrink_in_place(u,100,24);c.style.display="none",a.style.transform="translate("+r.left+"px, "+r.top+"px) scale("+r.width/window.innerWidth+", "+r.height/window.innerHeight+")",a.style.opacity=1,removeClass(".expanded","expanded"),setTimeout(function(){a.classList.add("expanded"),a.style.top=0,a.style.left=0,a.style.bottom=0,a.style.right=0,a.style.width="100%",a.style.height="100%",a.style.borderWidth=0,a.style.transform="translate(0px, 0px) scale(1)"},50),modal.is_open=!0},modal.hide=function(){backToGame(),renderState({page:"game"})};</script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	max-width: 50%;
+	margin: 5% auto;
+	font-size: 120%;
+	line-height: 150%;
+}
+
+.note {
+	color: red;
+}
+
+.directions {
+	font-weight: bold;
+}
+
+.title {
+	font-style: italic;
+	font-weight: bold;
+}
+
+code {
+	font-weight: bold;
+}
+
+.stress {
+	font-style: italic;
+}
+
+.def {
+	font-style: italic;
+	font-weight: bold;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #000000;
+}
+
+tr th, td {
+	width: 33%;
+	text-align: left;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+
+.strike {
+   text-decoration: line-through;
+}
