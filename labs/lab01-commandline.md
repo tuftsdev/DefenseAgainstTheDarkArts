@@ -4,7 +4,7 @@
 
 Because this is largely a hands-on course, it is essential that you learn many of the fundamental Linux commands, an important skill for any good security practitioner.
 
-If you are using macOS, you can also use the Terminal app. If you are using Windows 10, you can use the Linux subsystem. See instructions at https://docs.microsoft.com/en-us/windows/wsl/install-win10. You are encouraged to use the Kali Linux virtual machine for this lab (https://comp116.org/kalivm.html).
+If you are using macOS, you can also use the Terminal app. If you are using Windows 10, you can use the Linux subsystem. See instructions at https://docs.microsoft.com/en-us/windows/wsl/install-win10.
 
 Please learn and tinker with the commands below and answer the questions below. Many commands will require flags.
 
