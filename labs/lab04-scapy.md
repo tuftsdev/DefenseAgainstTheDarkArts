@@ -46,8 +46,6 @@ Here is a working `alarm.py`: https://gist.github.com/mchow01/f0f498f29d2b3bd095
 
 Your job is to modify the `packetcallback` function. What has been written for you: the handling and parsing of command line arguments, reading of PCAP file, and sniffing of network.
 
-If you go web browsing in the virtual machine with the alarm running, you will notice the alarm will go off...
-
 ### Getting Started Part 2, Installing Latest Python 3 and Scapy
 
 Step 1: install the latest version of Python for your system.  If you are using macOS and Homebrew, you can install the latest version of Python via `brew install python`.  For Windows, download installer at https://www.python.org/downloads/
