@@ -72,7 +72,7 @@ Step 9. When you want to exit your virtual environment, run `deactivate` before 
 2. You are not allowed to use additional _third party_ Python packages aside from Scapy.
 
 ### Running and Using the Tool
-Run: `python3 alarm.py`. By default with no arguments, the tool shall sniff on network interface `eth0`.  This will result in a error as you need to be superuser / administrator to sniff network traffic.  Also note, this will not work on macOS because macOS uses `en` for network interfaces.  The tool must handle three command line arguments:
+Run: `python3 alarm.py`. By default with no arguments, the tool shall sniff on network interface `eth0`.  This will result in an error as you need to be superuser / administrator to sniff network traffic.  Also note, this will not work on macOS because macOS uses `en` for network interfaces.  The tool must handle three command line arguments:
 
 `-i INTERFACE: Sniff on a specified network interface`
 `-r PCAPFILE: Read in a PCAP file`
