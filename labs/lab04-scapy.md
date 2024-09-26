@@ -10,7 +10,7 @@ Being proficient in programming is an essential skill to have as a cyber securit
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">For me, it&#39;s more than invaluable, it&#39;s essential.</p>&mdash; Jeremiah Grossman (@jeremiahg) <a href="https://twitter.com/jeremiahg/status/875111993463644160">June 14, 2017</a></blockquote>
 
-Because Python 2 was deprecated on January 1, 2020, you must use Python 3 for this lab.
+Because Python 2 was deprecated on January 1, 2020, you must use Python 3 for this lab.  Instructions has been modified for Python 3.12.x.
 
 An interactive Python tutorial: https://www.learnpython.org/
 
