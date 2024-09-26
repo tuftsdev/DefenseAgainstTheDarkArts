@@ -41,12 +41,32 @@ Your program does not need to support saving the stream of packets to a PCAP fil
 
 No credit if you program crashes or if exceptions are not handled properly.
 
-### Getting Started
+### Getting Started Part 1, Alarm Starter Code
 Here is a working `alarm.py`: https://gist.github.com/mchow01/f0f498f29d2b3bd095b8c93172c6ecf7
 
 Your job is to modify the `packetcallback` function. What has been written for you: the handling and parsing of command line arguments, reading of PCAP file, and sniffing of network.
 
 If you go web browsing in the virtual machine with the alarm running, you will notice the alarm will go off...
+
+### Getting Started Part 2, Installing Latest Python 3 and Scapy
+
+Step 1: install the latest version of Python for your system.  If you are using macOS and Homebrew, you can install the latest version of Python via `brew install python`.  For Windows, download installer at https://www.python.org/downloads/
+
+Step 2: create a folder for the lab.  Example: `mkdir alarm`
+
+Step 3: Inside the `alarm` folder (via `cd alarm`), create a virtual environment via `virtualenv` for Python.  Run `python3 -m venv env`.  `virtualenv` is a tool that allows you to create virtual environments in Python and manage Python packages --so your system default Python packages, libraries, and tools do not break.  To learn more about virtual environments, read https://learnpython.com/blog/how-to-use-virtualenv-python/.
+
+Step 4. Activate the virtual environment via `source env/bin/activate`.  You will notice `(env)` on your command prompt.  This shows that Python virtual environment is active.
+
+Step 5. Install `scapy` via `pip install scapy`
+
+Step 6. Download a copy of the alarm starter code (above, from GitHub) into the `alarm` folder and call it `alarm.py`
+
+Step 7. Download a copy of `set2.pcap` from Lab 2 into the `alarm` folder (e.g., `wget https://www.cs.tufts.edu/comp/116/set2.pcap`)
+
+Step 8. Run `python3 alarm.py -r set2.pcap`.  The alarm will read in `set2.pcap` and you should see a run of `HTTP (web) traffic detected!` alerts.
+
+Step 9. When you want to exit your virtual environment, either close your terminal or run `deactivate`
 
 ### IMPORTANT: What You Are NOT Allowed To Do
 
@@ -54,13 +74,13 @@ If you go web browsing in the virtual machine with the alarm running, you will n
 2. You are not allowed to use additional _third party_ Python packages aside from Scapy.
 
 ### Running and Using the Tool
-Run: `sudo python3 alarm.py`. By default with no arguments, the tool shall sniff on network interface `eth0`.  NOTE: this will not work on macOS because macOS uses `en` for network interfaces.  The tool must handle three command line arguments:
+Run: `python3 alarm.py`. By default with no arguments, the tool shall sniff on network interface `eth0`.  The result should result in a error as you need to be superuser / administrator to sniff network traffic.  Also note, this will not work on macOS because macOS uses `en` for network interfaces.  The tool must handle three command line arguments:
 
 `-i INTERFACE: Sniff on a specified network interface`
 `-r PCAPFILE: Read in a PCAP file`
 `-h: Display message on how to use tool`
 
-Example 1: `sudo python3 alarm.py -h` shall display something of the like:
+Example 1: `python3 alarm.py -h` shall display something of the like:
 
 `usage: alarm.py [-h] [-i INTERFACE] [-r PCAPFILE]
 
@@ -68,7 +88,7 @@ A network sniffer that identifies basic vulnerabilities
 
 optional arguments: -h, --help show this help message and exit -i INTERFACE Network interface to sniff on -r PCAPFILE A PCAP file to read`
 
-NOTE: sniffing on network interfaces requires `sudo`.
+NOTE: again, sniffing on network interfaces requires `sudo`.
 
 Example 2: `python3 alarm.py -r set2.pcap` will read the packets from `set2.pcap`.  NOTE: reading PCAP files via Scapy or a Python program does not require `sudo`.
 
@@ -87,6 +107,7 @@ Here are PCAPs you can also use to test your alarm:
 4. nikto.pcap: https://www.cs.tufts.edu/comp/116/nikto.pcap
 5. rdp.pcap: https://www.cs.tufts.edu/comp/116/rdp.pcap
 6. smb.pcap: https://www.cs.tufts.edu/comp/116/smb.pcap
+7. vnc.pcap: https://www.cs.tufts.edu/comp/116/vnc.pcap
 
 ### References
 * Scapy documentation: https://scapy.readthedocs.io/en/latest/
@@ -104,7 +125,7 @@ This `README` file shall describe the work. This description must:
   - Are the heuristics used in this assignment to determine incidents "even that good"?
   - If you have spare time in the future, what would you add to the program or do differently with regards to detecting incidents?
 
-## NEW Starting Spring 2023: Using AI Tools Such as ChatGPT
+## Using AI Tools Such as ChatGPT
 
 You are allowed to use AI tools such as ChatGPT for assistance.  Learning to use AI is an emerging skill.  However, beware of the limits of tools such as ChatGPT:
 
