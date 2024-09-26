@@ -64,7 +64,7 @@ Step 7. Download a copy of `set2.pcap` from Lab 2 into the `alarm` folder (e.g.,
 
 Step 8. Run `python3 alarm.py -r set2.pcap`.  The alarm will read in `set2.pcap` and you should see a run of `HTTP (web) traffic detected!` alerts.
 
-Step 9. When you want to exit your virtual environment, either close your terminal or run `deactivate`
+Step 9. When you want to exit your virtual environment, run `deactivate` before you close terminal.
 
 ### IMPORTANT: What You Are NOT Allowed To Do
 
