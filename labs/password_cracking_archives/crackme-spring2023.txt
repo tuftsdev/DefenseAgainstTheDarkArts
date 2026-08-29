@@ -1,0 +1,16 @@
+jackbear:$1$IcEtJQLA$XdgWze34ESFTawKK9tGAY0:1001:1001:,,,:/home/jackbear:/bin/bash
+brotherbear:$1$Kz02BU4B$Xua6prBBt/JmR0d76yrHH0:1002:1002:,,,:/home/brotherbear:/bin/bash
+fancybear:$1$U0fph1lm$Xls6U5H/YOHO/GJupuhrn1:1003:1003:,,,:/home/fancybear:/bin/bash
+barneybear:$1$h6pwSfzU$AobJuVh3VYtwWV289Wxk51:1004:1004:,,,:/home/barneybear:/bin/bash
+pandabear:$1$/Ais4vWf$/EjRTcWCsPiFJJ0QkGyDS1:1005:1005:,,,:/home/pandabear:/bin/bash
+yogibear:$1$1PxK.b6G$wtdQK4JG0QU56fVsKPaGI/:1006:1006:,,,:/home/yogibear:/bin/bash
+papabear:$1$YdqJuNhq$6aALThxA8LGvxgbkr8ZdK/:1007:1007:,,,:/home/papabear:/bin/bash
+grizzlybear:$1$jqiumZSN$KuuoYt1lVMmAdf7gTLVgv1:1008:1008:,,,:/home/grizzlybear:/bin/bash
+sisterbear:$6$q/wSa3rMUvB5tzJp$Pl2o08j6WdAMvhuhNH4A/6r/hT.Acfknwc1PPxmhSOmwGTcXZe/Sys012nmB71RlVh8EKaTruxsn0EcsNn5sW/:1009:1009:,,,:/home/sisterbear:/bin/bash
+teddybear:$6$X5Ce3ITEGJDqhMqo$p5ayq6iPb7L8MW7d29EcgzERW4iQuYnjr.pJYFDcmcZgiVsY/4mICp/vODmQDuo9Q5iC.pEqJ7jfNgjkXf0841:1010:1010:,,,:/home/teddybear:/bin/bash
+polarbear:$6$jO1g29ts5kmX/E0S$UvACOjug75rHOJo8M1ztYCGcu7IRPlflOc5pn2AqogN2szqYQZDm3EqKKgzHLrOgMmClp6A.6o.FVDGz648Yk1:1011:1011:,,,:/home/polarbear:/bin/bash
+bluebear:$6$h4J3yEUEoXFVF/tv$dOlENVF2W7QPCM4MsNjWhKqvQTxHohEeIkM/hKdeIHUHAJ5jQlHg0b.rnNnpTMnpCmJh5Ht5KhnQTXw0DkuYG1:1012:1012:,,,:/home/bluebear:/bin/bash
+blackbear:$6$vR.Gz.7c2cvQiH6h$dO9P7JIoA8h24OUAtmWrY22H15hWP.nQekExIoTRyny.WTPAWj3xJQtsIIOioRq21vwgJs783Ia1f3/NNY7Yl.:1013:1013:,,,:/home/blackbear:/bin/bash
+mamabear:$6$T8E/8po9NpVWhQXM$mn7dmU58gb3px4ZzyrSZAV.TedUmOZ0E.Jz/j.OBoUYemEPqOQ/0TpekA9g1S81XsHCv6WUhMlaEDj529eAiW/:1014:1014:,,,:/home/mamabear:/bin/bash
+carebear:$6$/AMYXRQamucYUdHi$/1TTplaDDqonMnIEvA1Ef2TtiKWzwBEz/djdSPNEMEZ0heeXx8GYLiMh7iy2Vj3U.a60k9YSihavzcv.44wuw.:1015:1015:,,,:/home/carebear:/bin/bash
+cozybear:$6$uODP9Vj9DvBEyz5G$GGUSWwlA8EX.eqaKcZEiMiYJboEcC2pj.bPsa9AMbyHV4dnot8WbAYv1aEIBpjeEEPYpel34z0sSACkTJU8Ci1:1016:1016:,,,:/home/cozybear:/bin/bash
