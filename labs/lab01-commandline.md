@@ -50,7 +50,7 @@ Commands: `ls, rm, mkdir, rmdir, cd, wget, pwd, ln, sudo, chmod, umask, ping, cu
 
 Let's further hone your basic security skills by playing wargames.  This set of wargames is offered by OverTheWire (http://overthewire.org/wargames/).
 
-Play the Bandit wargame at http://overthewire.org/wargames/bandit/, beginning with level 0.  Reach level 15 or higher (you can stop at level 15, 14=>15).  To get credit, submit a selfie of you and your terminal screen showing that you reached level 15.  Only JPG or PNG picture format will be accepted.
+Play the Bandit wargame at http://overthewire.org/wargames/bandit/, beginning with level 0.  Reach level 20 or higher (you can stop at level 20, 19 => 20).  To get credit, submit a selfie of you and your terminal screen showing that you reached level 20.  Only JPG or PNG picture format will be accepted.
 
 _This part is dedicated to Olivia MacDougal, Class of 2018_
 
