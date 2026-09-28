@@ -131,6 +131,7 @@ The `README.txt` file must be written:
 1. In your own words (candor encouraged)
 2. Two pages max
 3. Must be in text format --not Markdown because Canvas cannot render Markdown.
+4. Must be written in English
 
 Look, most if not all of you will use an LLM like ChatGPT or Claude to do the actual coding of this lab, but how did you go about doing this lab from start to finish?  What questions did you ask to clarify certain elements of this lab (e.g., did you ask what a Nikto scan is)?  What model(s) did you use?  What software / editor did you use?  How did you test the generated program from LLM?  What other thoughts do you have about this lab?  _Write in your own words, and candor is strongly encouraged._
 
@@ -145,7 +146,7 @@ For students officially enrolled in the course, submit lab on Canvas.
 This lab is worth 20 points.
 
 * (10 points) `README.txt`
-* (BONUS +1) In liew of submitting a `README.txt`, email me a _handwritten_ `README`.  Take pictures of pages, email pictures.
+* (BONUS +1) In lieu of submitting a `README.txt`, email me a _handwritten_ `README`.  Take pictures of pages, email pictures.
 * (10 points)
   - Alarm detects usernames and passwords sent in-the-clear via HTTP Basic Authentication, FTP, and IMAP
   - Alarm detects FIN scan
