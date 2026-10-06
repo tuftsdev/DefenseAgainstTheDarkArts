@@ -60,9 +60,9 @@ Step 5. Install `scapy` via `pip install scapy`
 
 Step 6. Download a copy of the alarm starter code (above, from GitHub) into the `alarm` folder and call it `alarm.py`
 
-Step 7. Download a copy of `set2.pcap` from Lab 2 into the `alarm` folder (e.g., `wget https://www.cs.tufts.edu/comp/116/set2.pcap`)
+Step 7. Download a copy of `set3.pcap` from Lab 2 into the `alarm` folder (e.g., `wget https://www.cs.tufts.edu/comp/116/set3.pcap`)
 
-Step 8. Run `python3 alarm.py -r set2.pcap`.  The alarm will read in `set2.pcap` and you should see a run of `HTTP (web) traffic detected!` alerts.
+Step 8. Run `python3 alarm.py -r set3.pcap`.  The alarm will read in `set3.pcap` and you should see a run of `HTTP (web) traffic detected!` alerts.
 
 Step 9. When you want to exit your virtual environment, run `deactivate` before you close terminal.
 
