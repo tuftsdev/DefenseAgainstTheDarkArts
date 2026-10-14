@@ -88,14 +88,14 @@ optional arguments: -h, --help show this help message and exit -i INTERFACE Netw
 
 NOTE: again, sniffing on network interfaces requires `sudo`.
 
-Example 2: `python3 alarm.py -r set2.pcap` will read the packets from `set2.pcap`.  NOTE: reading PCAP files via Scapy or a Python program does not require `sudo`.
+Example 2: `python3 alarm.py -r set1.pcap` will read the packets from `set1.pcap`.  NOTE: reading PCAP files via Scapy or a Python program does not require `sudo`.
 
 Example 3: `sudo python3 alarm.py -i en0` will sniff packets on a wireless interface `en0`
 
 When sniffing on a live interface, the tool must keep running. To quit it, press Control-C
 
 ### Testing Your Tool
-Your tool must be able to detect the usernames and passwords sent in-the-clear in `set1.pcap`, `set2.pcap`, and `set3.pcap` from the Packet Sleuth lab (Lab 2).
+Your tool must be able to detect the usernames and passwords sent in-the-clear in `set1.pcap`, `set3.pcap`, and `set4.pcap` from the Packet Sleuth lab (Lab 2).
 
 Here are PCAPs you can also use to test your alarm:
 
